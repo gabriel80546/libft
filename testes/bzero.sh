@@ -1,0 +1,1 @@
+gcc bzero.c ../libft.h ../ft_memset.c ../ft_bzero.c -o main
