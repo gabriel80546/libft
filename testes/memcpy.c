@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:19:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 14:49:08 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/02 15:12:34 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include "../libft.h"
 
-void	main(void)
+int	main(void)
 {
 	char	src[50];
 	char	dest[50];
