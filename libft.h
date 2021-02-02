@@ -6,14 +6,14 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 09:35:11 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 14:50:41 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/02 16:47:44 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+typedef unsigned long size_t;
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);

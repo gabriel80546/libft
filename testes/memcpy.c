@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:19:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 15:12:34 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/02 17:50:24 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	main(void)
 	char	src[50];
 	char	dest[50];
 
-	strcpy(src, "http://www.tutorialspoint.com");
+	strcpy(src, "Heloo!! como vai vc");
 	strcpy(dest, "Heloooo!!");
 	printf("Before memcpy dest = %s\n", dest);
 	memcpy(dest, src, strlen(src) + 1);
 	printf("After memcpy dest = %s\n", dest);
-	strcpy(src, "http://www.tutorialspoint.com");
+	strcpy(src, "Heloo!! como vai vc");
 	strcpy(dest, "Heloooo!!");
 	printf("Before ft_memcpy dest = %s\n", dest);
 	ft_memcpy(dest, src, strlen(src) + 1);

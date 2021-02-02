@@ -6,25 +6,21 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 09:10:12 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 13:51:55 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/02 17:49:15 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
 	int		contador;
-	char	*saida_temp;
-	void	*saida;
 
-	saida_temp = (char *)s;
 	contador = 0;
 	while (contador < n)
 	{
-		*(saida_temp + contador) = (char)c;
+		*((char *)s + contador) = (char)c;
 		contador++;
 	}
-	saida = saida_temp;
-	return (saida);
+	return (s);
 }
