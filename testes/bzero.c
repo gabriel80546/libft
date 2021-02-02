@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 11:12:29 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 13:32:47 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/02 13:34:14 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(void)
 	char	str[50];
 	int		contador;
 
-	strcpy(str, "This is string.h library function");
+	strcpy(str, "This is string.h library function git");
 	contador = 0;
 	while (contador < 50)
 	{
