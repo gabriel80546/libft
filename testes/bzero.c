@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 11:12:29 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 13:54:56 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/02 14:51:47 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "../libft.h"
+#include "bzero.h"
 
 int		main(void)
 {

@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 08:09:58 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 11:10:40 by gabriel          ###   ########.fr       */
+/*   Created: 2021/02/02 14:17:00 by gabriel           #+#    #+#             */
+/*   Updated: 2021/02/02 14:36:45 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
-#include "libft.h"
+#include <stddef.h>
 
-int	main(void)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	str[50];
-	int		numero;
-
-	strcpy(str, "This is string.h library function");
-	puts(str);
-	ft_memset(str, '$', 7);
-	puts(str);
-	return (0);
+	return (dest);
 }
