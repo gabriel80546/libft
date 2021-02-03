@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 09:35:11 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/03 08:26:35 by gabriel          ###   ########.fr       */
+/*   Created: 2021/02/03 08:20:14 by gabriel           #+#    #+#             */
+/*   Updated: 2021/02/03 08:29:58 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-typedef unsigned long size_t;
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	int		contador;
+	char	*saida;
 
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-
-#endif
+	saida = (char *)s;
+	contador = 0;
+	while (contador < n)
+	{
+		if (*(saida) == (char)c)
+			break ;
+		saida++;
+		contador++;
+	}
+	return (saida);
+}
