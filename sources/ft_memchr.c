@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 14:17:00 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/03 07:52:20 by gabriel          ###   ########.fr       */
+/*   Created: 2021/02/03 08:20:14 by gabriel           #+#    #+#             */
+/*   Updated: 2021/02/03 14:03:06 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	int		contador;
-	char	temp[n];
+	char	*saida;
 
+	saida = (char *)s;
 	contador = 0;
 	while (contador < n)
 	{
-		temp[contador] = *((char *)src + contador);
-		*((char *)dest + contador) = temp[contador];
+		if (*(saida) == (char)c)
+			break ;
+		saida++;
 		contador++;
 	}
-	return (dest);
+	return (saida);
 }

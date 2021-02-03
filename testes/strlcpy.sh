@@ -1,6 +1,9 @@
+
+funcao="strlcpy"
+
 if [ $(whoami) = "gabriel" ]
 then
-    gcc strlcpy.c ../libft.h ../ft_strlcpy.c -o main
+    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c -o main
 else
-    gcc strlcpy.c ../libft.h ../ft_strlcpy.c
+    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c
 fi

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/03 09:20:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/03 09:26:11 by gabriel          ###   ########.fr       */
+/*   Created: 2021/02/02 14:17:00 by gabriel           #+#    #+#             */
+/*   Updated: 2021/02/03 14:03:02 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	int contador;
+	int	contador;
 
 	contador = 0;
-	while(*(s + contador) != '\0')
+	while (contador < n)
+	{
+		if ((*((char *)src + contador - 1)) == c)
+			break ;
+		*((char *)dest + contador) = *((char *)src + contador);
 		contador++;
-	return contador;
+	}
+	return (dest);
 }

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 11:16:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 17:45:11 by gabriel          ###   ########.fr       */
+/*   Created: 2021/02/02 14:17:00 by gabriel           #+#    #+#             */
+/*   Updated: 2021/02/03 14:03:13 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	int	contador;
 
 	contador = 0;
 	while (contador < n)
 	{
-		*((char *)s + contador) = 0;
+		*((char *)dest + contador) = *((char *)src + contador);
 		contador++;
 	}
+	return (dest);
 }

@@ -1,6 +1,9 @@
+
+funcao="bzero"
+
 if [ $(whoami) = "gabriel" ]
 then
-    gcc bzero.c ../libft.h ../ft_memset.c ../ft_bzero.c -o main
+    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c -o main
 else
-    gcc bzero.c ../libft.h ../ft_memset.c ../ft_bzero.c
+    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c
 fi

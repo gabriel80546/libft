@@ -1,16 +1,25 @@
 # Define required macros here
-SHELL = /bin/sh
 
-OBJS =  main.o
 CFLAG = -Wall -Wextra -Werror
 CC = gcc
-#INCLUDE =
-#LIBS = -lm
+
+$(NAME):
+	${CC} -c ${CFLAGS} libft.h sources/$(NAME)
+	ar -rc libft.a sources/$(NAME:.c=.o)
 
 all:
-	${CC} main.c ft_memset.c ${CFLAGS} -o main
-# clean:
-#    -rm -f *.o core *.core
-
-# .cpp.o:
-#    ${CC} ${CFLAGS} ${INCLUDES} -c $<
+	${CC} -c ${CFLAGS} libft.h sources/*.c
+	mv *.o sources/
+	ar -rc libft.a sources/*.o
+clean:
+	rm -f -- sources/*.o
+	rm -f -- libft.h.gch
+fclean:
+	rm -f -- sources/*.o
+	rm -f -- libft.h.gch
+re:
+	rm -f -- *.o libft.a
+	rm -f -- libft.h.gch
+	${CC} -c ${CFLAGS} libft.h sources/*.c
+	mv *.o sources/
+	ar -rc libft.a sources/*.o

@@ -1,6 +1,9 @@
+
+funcao="strlen"
+
 if [ $(whoami) = "gabriel" ]
 then
-    gcc strlen.c ../libft.h ../ft_strlen.c -o main
+    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c -o main
 else
-    gcc strlen.c ../libft.h ../ft_strlen.c
+    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c
 fi

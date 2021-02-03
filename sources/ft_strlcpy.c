@@ -6,15 +6,15 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 09:32:13 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/03 09:36:49 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/03 14:03:23 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t  contador;
+	size_t	contador;
 
 	contador = 0;
 	while (contador < size)
