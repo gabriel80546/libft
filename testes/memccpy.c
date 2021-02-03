@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   memccpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 09:35:11 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/03 07:26:28 by gabriel          ###   ########.fr       */
+/*   Created: 2021/02/03 07:23:02 by gabriel           #+#    #+#             */
+/*   Updated: 2021/02/03 07:29:17 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "../libft.h"
 
-typedef unsigned long size_t;
+char *g_msg = "This is the string: not copied";
 
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+int	main(void)
+{
+	char buffer[80];
 
-#endif
+	memset(buffer, '\0', 80);
+	memccpy(buffer, g_msg, ':', 80);
+	printf("%s\n", buffer);
+	memset(buffer, '\0', 80);
+	ft_memccpy(buffer, g_msg, ':', 80);
+	printf("%s\n", buffer);
+	return (0);
+}

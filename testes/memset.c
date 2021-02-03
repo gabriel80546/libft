@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 11:12:29 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 17:48:11 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/03 07:12:17 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(void)
 	puts(str);
 	memset(str, '$', 7);
 	puts(str);
-
 	strcpy(str, "This is string.h library function");
 	puts(str);
 	ft_memset(str, '$', 7);
