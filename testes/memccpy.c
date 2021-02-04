@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 07:23:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/04 09:02:22 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/04 09:29:32 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,6 @@ int	main(void)
 	printf("%s\n", (mem == 0) ? "(NULL)" : (char *)mem);
 	if(mem == NULL) { mem = copia; }
 	memset(mem, 'j', 30);
-	printf("antes tava assim => (%s)\n", (mem == 0) ? "(NULL)" : (char *)mem);
 	mem = ft_memccpy(mem, "zyxwvutsrqponmlkjihgfedcba", 'a', 26);
 	printf("%s\n", (mem == 0) ? "(NULL)" : (char *)mem);
 	if(mem == NULL) { mem = copia; }
