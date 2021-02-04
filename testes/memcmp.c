@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 08:50:50 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/03 09:06:58 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/04 11:18:24 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void)
 	char	str2[15];
 	int		ret;
 
-	memcpy(str1, "abcdef", 6);
+	memcpy(str1, "abcdeg", 6);
 	memcpy(str2, "ABCDEF", 6);
 	ret = memcmp(str1, str2, 5);
 	if (ret > 0)
