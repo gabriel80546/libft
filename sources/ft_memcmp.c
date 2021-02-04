@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 08:48:24 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/03 14:03:09 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/04 11:15:43 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	contador;
+	int				contador;
+	unsigned char	left;
+	unsigned char	right;
 
 	contador = 0;
 	while (contador < n)
 	{
-		if (*((char *)s1 + contador) != *((char *)s2 + contador))
-			return (*((char *)s1 + contador) - *((char *)s2 + contador));
+		left = *((unsigned char *)s1 + contador);
+		right = *((unsigned char *)s2 + contador);
+		if (left != right)
+			return (left - right);
 		contador++;
 	}
 	return (0);
