@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 08:20:14 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/03 14:03:06 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/04 10:27:18 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (contador < n)
 	{
 		if (*(saida) == (char)c)
-			break ;
+			return (saida);
 		saida++;
 		contador++;
 	}
-	return (saida);
+	return (NULL);
 }
