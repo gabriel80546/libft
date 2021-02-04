@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 09:32:13 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/03 14:03:23 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/04 12:53:46 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,25 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	contador;
+	char	atual;
+	int		zero;
 
+	zero = 0;
 	contador = 0;
-	while (contador < size)
+	atual = *((char *)src + contador);
+	while (atual != '\0')
 	{
-		*((char *)dst + contador) = *((char *)src + contador);
+		if (contador < size)
+			*((char *)dst + contador) = atual;
+		else if (contador == size)
+		{
+			zero = 1;
+			*((char *)dst + contador - 1) = '\0';
+		}
 		contador++;
+		atual = *((char *)src + contador);
 	}
+	if (zero == 0)
+		*((char *)dst + contador) = '\0';
 	return (contador);
 }
