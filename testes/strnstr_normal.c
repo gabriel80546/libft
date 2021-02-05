@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:08:05 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/05 16:41:25 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/05 15:23:28 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 #include <unistd.h>
 #include "../libft.h"
 #include <stdio.h>
-#include <string.h>
-
-char	*strnstr(const char *big, const char *little, size_t len);
 
 static void		ft_print_result(char const *s)
 {
@@ -30,9 +27,6 @@ static void		ft_print_result(char const *s)
 
 static void		check_strnstr(char *big, char *little, int len)
 {
-    printf("big = '%s', size = %ld\n", big, strlen(big));
-    printf("little = '%s', size = %ld\n", little, strlen(little));
-    printf("len = %d\n", len);
 	char *str = ft_strnstr(big, little, len);
 
 	if (!str)
@@ -46,9 +40,6 @@ int				main(int argc, const char *argv[])
 	int			arg;
 
 	alarm(5);
-
-    // printf("saida = %s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 16));
-
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)

@@ -6,9 +6,11 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 13:52:41 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/05 14:12:22 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/05 14:44:03 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
