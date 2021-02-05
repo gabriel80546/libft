@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:41:15 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/05 16:46:53 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/05 16:51:50 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,39 +28,31 @@ static size_t	ft_strlen_sub(char *str)
 	return (contador);
 }
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char			*ft_strnstr(const char *big, const char *l, size_t len)
 {
-    int		x, y;
-    size_t	big_size;
-    size_t	little_size;
-	char	atual;
-	char	*saida;
+	int	x;
+	int	y;
 
-	big_size = ft_strlen_sub((char *)big);
-    little_size = ft_strlen_sub((char *)little);
-	if(little_size == 0)
+	if (ft_strlen_sub((char *)l) == 0)
 		return (char *)big;
 	x = 0;
 	y = 0;
-	saida = (char *)big;
 	while (*(big + x) != '\0')
 	{
-		if(*(big + x + y) == *(little + y) && (*(little + y) != '\0') && y < len)
+		if (*(big + x + y) == *(l + y) && (*(l + y) != '\0') && y < len)
 			y++;
-		else if((*(little + y) == '\0') && y != 0 && y < len)
-			break;
+		else if ((*(l + y) == '\0') && y != 0 && y < len)
+			break ;
 		else
 		{
 			y = 0;
 			x++;
 		}
 	}
-	saida = (char *)big + x;
-	
-	if(*(saida) == '\0')
+	if (*(((char *)big + x)) == '\0')
 		return ((void *)0);
-	else if(x > (len - little_size))
+	else if (x > (len - ft_strlen_sub((char *)l)))
 		return ((void *)0);
 	else
-		return (saida);
+		return (((char *)big + x));
 }
