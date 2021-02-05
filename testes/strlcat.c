@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:06:12 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/05 13:12:30 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/05 13:38:11 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ static void		check_strlcat(char *dest, char *src, int size, int dest_len)
     printf("src = '%s', size = %d\n", src, strlen(src));
     printf("size = %d\n\n", size);
 
-    // int saida = ft_strlcat_gold_old(dest, src, size);
-    // int saida = ft_strlcat_gold(dest, src, size);
     // int saida = strlcat(dest, src, size);
     int saida = ft_strlcat(dest, src, size);
 
