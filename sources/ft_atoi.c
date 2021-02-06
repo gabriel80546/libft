@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 07:35:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/06 13:58:32 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/06 14:22:36 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static int	ft_atoi_backend(char backend[40])
 
 int			ft_atoi(const char *nptr)
 {
-	int		contador;
-	int		y;
-	char	backend[40];
-	int		estado;
-	int		sinal;
+	int			contador;
+	int			y;
+	char		backend[40];
+	int			estado;
+	int			sinal;
 
 	ft_memset(backend, '\0', 40);
 	y = 0;
@@ -59,7 +59,7 @@ int			ft_atoi(const char *nptr)
 				sinal = -1;
 				estado = 1;
 			}
-			else if (*(nptr + contador) == '\t' || *(nptr + contador) == '\n' || *(nptr + contador) == '\r' || *(nptr + contador) == '\v' || *(nptr + contador) == '\f' || *(nptr + contador) == ' ')
+			else if (ft_strchr("\t\n\r\v\f ", *(nptr + contador)) != 0)
 			{
 			}
 			else
