@@ -1,55 +1,73 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   toupper.c                                          :+:      :+:    :+:   */
+/*   strjoin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/28 12:09:27 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/06 15:36:44 by gabriel          ###   ########.fr       */
+/*   Created: 2017/02/28 12:33:59 by jtoty             #+#    #+#             */
+/*   Updated: 2021/02/06 16:45:40 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <ctype.h>
 #include "../libft.h"
 #include <stdio.h>
 #include <string.h>
 
-
-static void		check_toupper(int start, int end)
+static void			ft_print_result(char const *s)
 {
-	int		c;
+	int		len;
 
-	while (start <= end)
-	{
-		c = ft_toupper(start);
-		write(1, &c, 1);
-		start++;
-	}
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
 }
 
-int				main(int argc, const char *argv[])
+static void			check_strjoin(char *s1, char *s2)
 {
+	char	*strjoin;
+
+	if (!(strjoin = ft_strjoin(s1, s2)))
+		ft_print_result("NULL");
+	else
+		ft_print_result(strjoin);
+	if (strjoin == s1 || strjoin == s2)
+		ft_print_result("\nA new string was not returned");
+	else
+		free(strjoin);
+}
+
+int					main(int argc, const char *argv[])
+{
+	char	s1[] = "lorem ipsum";
+	char	s2[] = "dolor sit amet";
 	int		arg;
 
 	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-		check_toupper(0, 47);
+	{
+		check_strjoin(s1, s2);
+	}
 	else if (arg == 2)
-		check_toupper('0', '9');
+	{
+		s1[0] = '\0';
+		check_strjoin(s1, s2);
+	}
 	else if (arg == 3)
-		check_toupper(58, 64);
+	{
+		s2[0] = '\0';
+		check_strjoin(s1, s2);
+	}
 	else if (arg == 4)
-		check_toupper('A', 'Z');
-	else if (arg == 5)
-		check_toupper(91, 96);
-	else if (arg == 6)
-		check_toupper('a', 'z');
-	else if (arg == 7)
-		check_toupper(123, 127);
+	{
+		s1[0] = '\0';
+		s2[0] = '\0';
+		check_strjoin(s1, s2);
+	}
 	return (0);
 }

@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calloc.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/20 11:59:07 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/06 15:49:20 by gabriel          ###   ########.fr       */
+/*   Created: 2021/02/06 15:55:54 by gabriel           #+#    #+#             */
+/*   Updated: 2021/02/06 16:19:11 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
 #include "../libft.h"
-#include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int		main(int argc, const char *argv[])
+char	*ft_strdup(const char *s)
 {
-	char	*str;
+	char	*saida;
+	int		contador;
 
-	alarm(5);
-	if (argc == 1)
-		return (0);
-	else if (atoi(argv[1]) == 1)
+	saida = (char *)malloc(sizeof(char) * ft_strlen(s));
+	while (*((char *)s + contador) != '\0')
 	{
-		str = (char *)ft_calloc(30, sizeof(char));
-		if (!str)
-			write(1, "NULL", 4);
-		else
-			write(1, str, 30);
-		free(str);
+		*(saida + contador) = *((char *)s + contador);
+		contador++;
 	}
-	return (0);
+	return (saida);
 }
