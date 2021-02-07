@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:30:05 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/07 14:40:26 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/07 15:01:53 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@
 
 char	*ft_itoa(int n)
 {
-	char *saida;
-	int contador;
-	int temp;
+	char	*saida;
+	int		contador;
+	int		temp;
 
 	saida = (char *)malloc(sizeof(char) * 40);
-
 	contador = 15;
-	if(n < 0)
+	if (n == -2147483648LL)
+	{
+		ft_strlcpy(saida, "-2147483648", 11);
+		return (saida);
+	}
+	if (n < 0)
 	{
 		*(saida + contador) = '-';
 		contador++;
@@ -36,7 +40,7 @@ char	*ft_itoa(int n)
 		contador++;
 	}
 	*(saida + contador) = n + '0';
-	if(*(saida + 15) == '-')
+	if (*(saida + 15) == '-')
 	{
 		*(saida + 0) = *(saida + 15);
 		temp = 1;
@@ -52,8 +56,7 @@ char	*ft_itoa(int n)
 		temp++;
 		contador--;
 	}
-	if(*(saida + 0) == '-')
+	if (*(saida + 0) == '-')
 		*(saida + temp - 1) = '\0';
-
 	return (saida);
 }

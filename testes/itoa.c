@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:19:22 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/07 14:03:11 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/07 15:00:15 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int				main(int argc, const char *argv[])
 	else if (arg == 8)
 		ft_print_result(ft_itoa(543000));
 	else if (arg == 9)
-		ft_print_result(ft_itoa(-2147483648LL));
+		ft_print_result(ft_itoa(-2147483647LL));
 	else if (arg == 10)
 		ft_print_result(ft_itoa(2147483647));
 	return (0);
