@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:07:32 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/06 07:27:28 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/08 14:06:31 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void     warp(const char *s1, const char *s2, size_t n)
 	print_char_array((char *)s2);
 	printf("];\n");
 	printf("n = %ld\n\nexec ft_strncmp(s1, s2, n)\n\nsaida => ", n);
-	ft_print_result(ft_strncmp(s1, s2, n));
+	ft_print_result(strncmp(s1, s2, n));
 	printf("\n\n");
 }
 
@@ -79,5 +79,7 @@ int				main(int argc, const char *argv[])
 		warp("abcdefgh", "", 0);
 	else if (arg == 11)
 		warp("test\200", "test\0", 6);
+	else if (arg == 12)
+		warp("atoms\0\0\0\0", "atoms\0abc", 8);
 	return (0);
 }
