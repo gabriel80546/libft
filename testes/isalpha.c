@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 11:59:49 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/06 14:39:16 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/08 12:52:47 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,18 @@ static void		check_isalpha(int start, int end)
 int				main(int argc, const char *argv[])
 {
 	int		arg;
+	int i;
+
+    printf("TEST ENTER\n");
+	i = -1;
+	while (i < 530)
+	{
+		printf("c(%i) = '%c'; ft_isalpha? = %i; isalpha? = %i\n", i, (char)i, ft_isalpha(i), isalpha(i));
+		if (!!ft_isalpha(i) != !!isalpha(i)) {
+			printf("TEST_FAILED"); return (0); }
+		i++;
+    }
+    printf("TEST_SUCCESS");
 
 	alarm(5);
 	if (argc == 1)
