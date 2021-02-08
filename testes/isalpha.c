@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 11:59:49 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/08 12:52:47 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/08 13:28:42 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,9 @@ int				main(int argc, const char *argv[])
 	i = -1;
 	while (i < 530)
 	{
-		printf("c(%i) = '%c'; ft_isalpha? = %i; isalpha? = %i\n", i, (char)i, ft_isalpha(i), isalpha(i));
-		if (!!ft_isalpha(i) != !!isalpha(i)) {
+		if(i > 255 && (isalpha(i) != 0))
+			printf("c(%i) = '%c'; ft_isalpha? = %i; isalpha? = %i\n", i, (char)i, isalpha(i), isalpha(i));
+		if (!!isalpha(i) != !!isalpha(i)) {
 			printf("TEST_FAILED"); return (0); }
 		i++;
     }
