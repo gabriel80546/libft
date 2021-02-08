@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:17:00 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/04 12:17:18 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/08 12:14:58 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int		contador;
+	int		i;
 	char	temp[n];
 
-	contador = 0;
-	while (contador < n)
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	i = 0;
+	while (i < n)
 	{
-		temp[contador] = *((char *)src + contador);
-		contador++;
+		temp[i] = *((char *)src + i);
+		i++;
 	}
-	contador = 0;
-	while (contador < n)
+	i = 0;
+	while (i < n)
 	{
-		*((char *)dest + contador) = temp[contador];
-		contador++;
+		*((char *)dest + i) = temp[i];
+		i++;
 	}
 	return (dest);
 }
