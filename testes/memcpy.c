@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:19:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/02 17:50:24 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/08 11:18:35 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,9 @@ int	main(void)
 	printf("Before ft_memcpy dest = %s\n", dest);
 	ft_memcpy(dest, src, strlen(src) + 1);
 	printf("After ft_memcpy dest = %s\n", dest);
+	ft_memcpy((void *)0, (void *)0, 3);
+	// ft_memcpy(((void*)0), "segfaulter tu dois", 17);
+	// ft_memcpy("            ", ((void*)0), 17);
+	printf("saida = %p\n", memcpy((void *)0, (void *)0, 3));
+	printf("saida = %p\n", ft_memcpy((void *)0, (void *)0, 3));
 }

@@ -23,3 +23,6 @@ re:
 	${CC} -c ${CFLAGS} libft.h sources/*.c
 	mv *.o sources/
 	ar -rc libft.a sources/*.o
+so:
+	$(CC) -fPIC $(CFLAGS) sources/*.c
+	gcc -shared -o libft.so sources/*.o
