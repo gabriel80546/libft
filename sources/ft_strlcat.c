@@ -6,11 +6,12 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 09:47:40 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/08 10:15:59 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/09 12:40:16 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+#include <stdio.h>
 
 size_t			ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -25,7 +26,7 @@ size_t			ft_strlcat(char *dest, const char *src, size_t size)
 		return (size + src_size);
 	contador = 0;
 	atual = *(src + contador);
-	while (atual != '\0' && (size > (dest_size + 2)))
+	while (atual != '\0' && (size > (dest_size + 2)) && ((contador + dest_size + 1) < size))
 	{
 		if (contador > (dest_size + 1) && (dest_size > 0))
 			break ;

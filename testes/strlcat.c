@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:06:12 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/05 13:38:11 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/09 12:26:24 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,22 @@ int				main(int argc, const char *argv[])
 	char	*dest;
 	int		arg;
 	int		dest_len;
+
+
+	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
+	char buff1[0xF00] = "there is no stars in the sky";
+	char buff2[0xF00] = "there is no stars in the sky";
+	size_t max = strlen("the cake is a lie !\0I'm hidden lol\r\n") + strlen("there is no stars in the sky");
+
+	strlcat(buff1, str, max);
+	ft_strlcat(buff2, str, max);
+	printf("str = '%s'; max = %ld;\n", str, max);
+	if (!strcmp(buff1, buff2)) {
+		printf("TEST_SUCCESS\n");
+		return (0); }
+	printf("buff1 = '%s';\nbuff2 = '%s';\n", buff1, buff2);
+	printf("TEST_FAILED\n");
+	return (1);
 
 	alarm(5);
 	dest_len = 15;
