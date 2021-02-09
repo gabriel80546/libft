@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:09:27 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/06 15:36:44 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/09 11:30:07 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,22 @@ static void		check_toupper(int start, int end)
 int				main(int argc, const char *argv[])
 {
 	int		arg;
+
+	int i;
+
+	i = -100;
+	while (i < 530)
+	{
+		printf("c(%i) = '%c'; ft_toupper => %i; toupper => %i\n", i, i, ft_toupper(i), toupper(i));
+		if (ft_toupper(i) != toupper(i))
+		{
+			printf("TEST_FAILED");
+			return (1);
+		}
+		i++;
+	}
+	printf("TEST_SUCCESS");
+
 
 	alarm(5);
 	if (argc == 1)

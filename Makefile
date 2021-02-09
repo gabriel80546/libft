@@ -6,7 +6,6 @@ CC = gcc
 $(NAME):
 	${CC} -c ${CFLAGS} libft.h sources/$(NAME)
 	ar -rc libft.a sources/$(NAME:.c=.o)
-
 all:
 	${CC} -c ${CFLAGS} libft.h sources/*.c
 	mv *.o sources/
