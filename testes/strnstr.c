@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:08:05 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/05 16:41:25 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/10 12:17:46 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static void		check_strnstr(char *big, char *little, int len)
 		ft_print_result("NULL");
 	else
 		ft_print_result(str);
+	printf("\n");
 }
 
 int				main(int argc, const char *argv[])
@@ -48,6 +49,20 @@ int				main(int argc, const char *argv[])
 	alarm(5);
 
     // printf("saida = %s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 16));
+
+	char *s1 = "AAAAAAAAAAAAA";
+	size_t max = strlen(s1);
+	char *i1 = strnstr(s1, s1, max);
+	char *i2 = ft_strnstr(s1, s1, max);
+
+	if(0) {
+		if (i1 == i2) {
+			printf("TEST_SUCCESS\n");
+			return (1); }
+		printf("TEST_FAILED\n");
+		return (0);
+	}
+
 
 	if (argc == 1)
 		return (0);

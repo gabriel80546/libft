@@ -6,34 +6,43 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:41:15 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/05 16:51:50 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/10 12:24:01 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdio.h>
 
-static size_t	ft_strlen_sub(char *str)
+char	*ft_strnstr(const char *big, const char *l, size_t len)
 {
-	size_t	contador;
-	char	atual;
+	int	i;
 
-	contador = 0;
-	atual = *(str + contador);
-	while (atual != '\0')
+	if (ft_strlen(l) == 0)
+		return ((char *)big);
+	i = 0;
+	while (*(big + i) != '\0' && i < len)
 	{
-		contador++;
-		atual = *(str + contador);
+		if (*(big + i) == *(l + 0))
+		{
+			if (ft_strncmp(((char *)big + i), l, ft_strlen(l)) == 0)
+			{
+				if ((i + ft_strlen(l)) > len)
+					return (NULL);
+				else
+					return ((char *)big + i);
+			}
+		}
+		i++;
 	}
-	return (contador);
+	return (NULL);
 }
 
-char			*ft_strnstr(const char *big, const char *l, size_t len)
+char	*ft_strnstr_old(const char *big, const char *l, size_t len)
 {
 	int	x;
 	int	y;
 
-	if (ft_strlen_sub((char *)l) == 0)
+	if (ft_strlen(l) == 0)
 		return (char *)big;
 	x = 0;
 	y = 0;
@@ -51,7 +60,7 @@ char			*ft_strnstr(const char *big, const char *l, size_t len)
 	}
 	if (*(((char *)big + x)) == '\0')
 		return ((void *)0);
-	else if (x > (len - ft_strlen_sub((char *)l)))
+	else if (x > (len - ft_strlen(l)))
 		return ((void *)0);
 	else
 		return (((char *)big + x));
