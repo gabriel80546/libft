@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:30:05 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/11 11:52:11 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 12:47:56 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,7 @@ char	*ft_itoa(int n)
 	}
 	if (*(saida + 0) == '-')
 		*(saida + temp - 1) = '\0';
+	else
+		*(saida + temp - 0) = '\0';
 	return (saida);
 }

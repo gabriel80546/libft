@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:19:22 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/07 15:00:15 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 12:38:52 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,32 @@ static void		ft_print_result(char *s)
 	}
 }
 
-int				main(int argc, const char *argv[])
+int				main(void)
+{
+	char *i1 = ft_itoa(-623);
+	char *i2 = ft_itoa(156);
+	char *i3 = ft_itoa(-0);
+
+	if (strcmp(i1, "-623"))
+	{
+		printf("TEST_FAILED\n");
+		return (1);
+	}
+	if (strcmp(i2, "156"))
+	{
+		printf("TEST_FAILED\n");
+		return (2);
+	}
+	if (strcmp("0", i3))
+	{
+		printf("TEST_FAILED\n");
+		return (3);
+	}
+	printf("TEST_SUCCESS\n");
+	return (0);
+}
+
+int				main_old(int argc, const char *argv[])
 {
 	int		arg;
 
