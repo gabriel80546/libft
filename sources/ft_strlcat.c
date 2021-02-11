@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 09:47:40 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/09 12:40:16 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 09:18:08 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 
 size_t			ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	contador;
-	size_t	dest_size;
-	size_t	src_size;
+	size_t	i;
+	size_t	dest_s;
+	size_t	src_s;
 	char	atual;
 
-	dest_size = ft_strlen(dest);
-	src_size = ft_strlen(src);
-	if (size < (dest_size + 1))
-		return (size + src_size);
-	contador = 0;
-	atual = *(src + contador);
-	while (atual != '\0' && (size > (dest_size + 2)) && ((contador + dest_size + 1) < size))
+	dest_s = ft_strlen(dest);
+	src_s = ft_strlen(src);
+	if (size < (dest_s + 1))
+		return (size + src_s);
+	i = 0;
+	atual = *(src + i);
+	while (atual != '\0' && (size > (dest_s + 2)) && ((i + dest_s + 1) < size))
 	{
-		if (contador > (dest_size + 1) && (dest_size > 0))
+		if (i > (dest_s + 1) && (dest_s > 0))
 			break ;
-		*(dest + contador + dest_size) = atual;
-		contador++;
-		atual = *(src + contador);
+		*(dest + i + dest_s) = atual;
+		i++;
+		atual = *(src + i);
 	}
-	*(dest + contador + dest_size) = '\0';
-	return (dest_size + src_size);
+	*(dest + i + dest_s) = '\0';
+	return (dest_s + src_s);
 }
