@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 08:59:08 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/11 09:56:00 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 10:19:22 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*saida;
 
 	saida = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if(saida == NULL)
+	if (saida == NULL)
 		return (NULL);
 	contador = 0;
 	while (*(s + contador) != '\0')
