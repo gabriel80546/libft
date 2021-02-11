@@ -3,7 +3,7 @@ funcao="substr"
 
 if [ $(whoami) = "gabriel" ]
 then
-    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c -o main
+    gcc -O2 -funroll-loops -Werror -Wall -Wextra $funcao.c ../libft.h ../sources/ft_$funcao.c ../sources/ft_strlen.c -o main
 else
-    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c
+    gcc -O2 -funroll-loops -Werror -Wall -Wextra $funcao.c ../libft.h ../sources/ft_$funcao.c ../sources/ft_strlen.c
 fi

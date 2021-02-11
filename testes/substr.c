@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:35:18 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/06 16:21:43 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 10:34:42 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,35 @@ static void		check_substr(char *str, int start, int len)
 
 int				main(int argc, const char *argv[])
 {
-	char	str[] = "lorem ipsum dolor sit amet";
+	char	string[] = "lorem ipsum dolor sit amet";
 	int		arg;
+
+
+	char *str = "01234";
+	size_t size = 10;
+	char *ret = ft_substr(str, 10, size);
+
+	if (!strncmp(ret, "", 1))
+	{
+		free(ret);
+		printf("TEST_SUCCESS\n");
+		return (1);
+	}
+	free(ret);
+	printf("TEST_FAILED\n");
+	return (0);
+
 
 	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = atoi(argv[1])) == 1)
-		check_substr(str, 0, 10);
+		check_substr(string, 0, 10);
 	else if (arg == 2)
-		check_substr(str, 7, 10);
+		check_substr(string, 7, 10);
 	else if (arg == 3)
-		check_substr(str, 7, 0);
+		check_substr(string, 7, 0);
 	else if (arg == 4)
-		check_substr(str, 0, 0);
+		check_substr(string, 0, 0);
 	return (0);
 }
