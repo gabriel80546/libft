@@ -3,7 +3,11 @@ funcao="strjoin"
 
 if [ $(whoami) = "gabriel" ]
 then
-    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c ../sources/ft_strlen.c -o main
+    gcc -O2 -funroll-loops -Werror -Wall -Wextra $funcao.c ../sources/ft_strjoin.c ../sources/ft_strlen.c -c
+    clang -O2 -funroll-loops -Werror -Wall -Wextra strjoin.o ft_strjoin.o ft_strlen.o -o main
+	rm *.o
 else
-    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c ../sources/ft_strlen.c
+    gcc -O2 -funroll-loops -Werror -Wall -Wextra $funcao.c ../sources/ft_strjoin.c ../sources/ft_strlen.c -c
+    clang -O2 -funroll-loops -Werror -Wall -Wextra strjoin.o ft_strjoin.o ft_strlen.o
+	rm *.o
 fi

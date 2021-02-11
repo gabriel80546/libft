@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:33:59 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/06 16:45:40 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 11:23:08 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ static void			ft_print_result(char const *s)
 	len = 0;
 	while (s[len])
 		len++;
-	write(1, s, len);
+	if(write(1, s, len) > 0)
+		return;
+	else
+		return;
 }
 
 static void			check_strjoin(char *s1, char *s2)
@@ -40,7 +43,43 @@ static void			check_strjoin(char *s1, char *s2)
 		free(strjoin);
 }
 
-int					main(int argc, const char *argv[])
+int					main_one(void)
+{
+	char *s1 = "my favorite animal is";
+	char *s2 = " ";
+	char *s3 = "the nyancat";
+	char *res = ft_strjoin(ft_strjoin(s1, s2), s3);
+
+	printf("res = '%s'\n", res);
+
+	if (!strcmp(res, "my favorite animal is the nyancat")) {
+		printf("TEST_SUCCESS\n");
+		return (0); }
+	printf("TEST_FAILED\n");
+	return (1);
+}
+
+int					main(void)
+{
+	char *s1 = "my favorite animal is";
+	char *s2 = " ";
+	char *s3 = "the nyancat";
+	char *tmp = ft_strjoin(s1, s2);
+	char *res = ft_strjoin(tmp, s3);
+
+	free(tmp);
+	if (!strcmp(res, "my favorite animal is the nyancat"))
+	{
+			free(res);
+			printf("TEST_SUCCESS\n");
+			return (1);
+	}
+	free(res);
+	printf("TEST_FAILED\n");
+	return (0);
+}
+
+int					main_old(int argc, const char *argv[])
 {
 	char	s1[] = "lorem ipsum";
 	char	s2[] = "dolor sit amet";
