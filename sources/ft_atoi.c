@@ -6,13 +6,14 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 07:35:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/06 14:22:36 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 08:18:27 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
+#include <stdio.h>
 
-static int	ft_atoi_backend(char backend[40])
+static int	ft_atoi_backend(int sinal, char backend[40])
 {
 	int dez;
 	int contador;
@@ -23,11 +24,15 @@ static int	ft_atoi_backend(char backend[40])
 	saida = 0;
 	while (contador > 0)
 	{
+		if(dez > 1000000000 && sinal == 1)
+			return (-1);
+		else if(dez > 1000000000 && sinal == -1)
+			return (0);
 		saida += dez * (backend[contador - 1] - '0');
 		dez *= 10;
 		contador--;
 	}
-	return (saida);
+	return (sinal * saida);
 }
 
 int			ft_atoi(const char *nptr)
@@ -82,7 +87,7 @@ int			ft_atoi(const char *nptr)
 	if (y == 0)
 		return (0);
 	else
-		return (sinal * ft_atoi_backend(backend));
+		return (ft_atoi_backend(sinal, backend));
 }
 
 /*
