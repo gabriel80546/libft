@@ -21,7 +21,7 @@ re:
 	rm -f -- libft.h.gch
 	pwd
 	ls -l
-	${CC} -c ${CFLAGS} libft.h sources/*.c
+	${CC} -c ${CFLAGS} libft.h *.c
 	ar -rc libft.a *.o
 so:
 	$(CC) -fPIC $(CFLAGS) sources/*.c
