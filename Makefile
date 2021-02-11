@@ -19,9 +19,10 @@ fclean:
 re:
 	rm -f -- *.o libft.a
 	rm -f -- libft.h.gch
+	pwd
+	ls -l
 	${CC} -c ${CFLAGS} libft.h sources/*.c
-	mv *.o sources/
-	ar -rc libft.a sources/*.o
+	ar -rc libft.a *.o
 so:
 	$(CC) -fPIC $(CFLAGS) sources/*.c
 	gcc -shared -o libft.so sources/*.o

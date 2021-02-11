@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 08:20:14 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/04 10:27:18 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 13:37:38 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		contador;
+	size_t	contador;
 	char	*saida;
 
 	saida = (char *)s;

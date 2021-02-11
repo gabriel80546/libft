@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 07:35:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/11 09:10:55 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 13:43:18 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	ft_atoi_ptwo(const char *nptr, int *contador, int *y, char *backend)
 	return (0);
 }
 
-static int	ft_atoi_init(int *y, int *estado, int *contador, int *sinal)
+static void	ft_atoi_init(int *y, int *estado, int *contador, int *sinal)
 {
 	*y = 0;
 	*estado = 0;

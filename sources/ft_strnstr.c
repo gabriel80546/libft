@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:41:15 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/10 12:24:01 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 13:47:57 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strnstr(const char *big, const char *l, size_t len)
 {
-	int	i;
+	size_t	i;
 
 	if (ft_strlen(l) == 0)
 		return ((char *)big);
@@ -39,8 +39,8 @@ char	*ft_strnstr(const char *big, const char *l, size_t len)
 
 char	*ft_strnstr_old(const char *big, const char *l, size_t len)
 {
-	int	x;
-	int	y;
+	size_t	x;
+	size_t	y;
 
 	if (ft_strlen(l) == 0)
 		return (char *)big;
