@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 07:39:48 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/08 11:59:48 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 19:40:18 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #include <string.h>
 #include "../libft.h"
 #include <stdlib.h>
+#include <unistd.h>
 
-int	main(void)
+
+int	main_old(void)
 {
 	char		destino[50];
 	const char	source[] = "newstring";
@@ -132,3 +134,33 @@ int	main(void)
 // dest = ft_memmove(dest, src, 8)		<= argumentos passados
 // dest = lcon							<= valor esperado
 // dest = con							<= valor retornado
+
+static void		check_memmove(void *dest, void *src, int n)
+{
+	if (dest != ft_memmove(dest, src, n))
+		write(1, "dest's adress was not returned\n", 31);
+	write(1, dest, 22);
+}
+
+int				main(int argc, const char *argv[])
+{
+	char	src[] = "lorem ipsum dolor sit amet";
+	char	*dest;
+	int		arg;
+
+	dest = src + 1;
+	alarm(5);
+	if (argc == 1)
+		return (0);
+	else if ((arg = atoi(argv[1])) == 1)
+		check_memmove(dest, "consectetur", 5);
+	else if (arg == 2)
+		check_memmove(dest, "con\0sec\0\0te\0tur", 10);
+	else if (arg == 3)
+		check_memmove(dest, src, 8);
+	else if (arg == 4)
+		check_memmove(src, dest, 8);
+	else if (arg == 5)
+		check_memmove(src, dest, 0);
+	return (0);
+}
