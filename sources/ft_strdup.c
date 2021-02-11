@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 15:55:54 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/06 16:19:11 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 09:55:21 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 char	*ft_strdup(const char *s)
 {
 	char	*saida;
-	int		contador;
+	int		i;
 
 	saida = (char *)malloc(sizeof(char) * ft_strlen(s));
-	while (*((char *)s + contador) != '\0')
+	if(saida == NULL)
+		return (NULL);
+	while (*((char *)s + i) != '\0')
 	{
-		*(saida + contador) = *((char *)s + contador);
-		contador++;
+		*(saida + i) = *((char *)s + i);
+		i++;
 	}
 	return (saida);
 }
