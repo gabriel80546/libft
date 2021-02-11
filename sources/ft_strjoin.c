@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 16:37:20 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/11 10:50:41 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 11:37:52 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		contador;
 	int		next;
 
-	saida = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	saida = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (saida == NULL)
 		return (NULL);
 	next = 0;
@@ -35,5 +35,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		next++;
 		contador++;
 	}
+	*(saida + contador) = '\0';
 	return (saida);
 }

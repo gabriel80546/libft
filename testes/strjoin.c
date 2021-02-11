@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:33:59 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/11 11:23:08 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/11 11:36:40 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "../libft.h"
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 
 static void			ft_print_result(char const *s)
 {
@@ -59,13 +60,15 @@ int					main_one(void)
 	return (1);
 }
 
-int					main(void)
+int					main_two(void)
 {
 	char *s1 = "my favorite animal is";
 	char *s2 = " ";
 	char *s3 = "the nyancat";
 	char *tmp = ft_strjoin(s1, s2);
 	char *res = ft_strjoin(tmp, s3);
+
+	printf("res = '%s'\n", res);
 
 	free(tmp);
 	if (!strcmp(res, "my favorite animal is the nyancat"))
@@ -77,6 +80,40 @@ int					main(void)
 	free(res);
 	printf("TEST_FAILED\n");
 	return (0);
+}
+
+int					main(void)
+{
+	char *s1 = "my favorite animal is ";
+	char *s2 = s1 + 20;
+	char *res = ft_strjoin(s2, s1);
+
+	printf("res = '%s'; strcmp(res, [teste]) = %d\n", res, strcmp(res, "s my favorite animal is "));
+
+	if (!strcmp(res, "s my favorite animal is ")) {
+		printf("TEST_SUCCESS\n");
+		return (1); }
+	printf("TEST_FAILED\n");
+	return (0);
+}
+
+int					main_four(void)
+{
+	char *s1 = "where is my ";
+	char *s2 = "malloc ???";
+	char *s3 = "where is my malloc ???";
+
+
+	char *res = ft_strjoin(s1, s2);
+
+	printf("res = '%s'\n", res);
+
+
+	if (!strcmp(res, s3)) {
+		printf("TEST_SUCCESS\n");
+		return (0); }
+	printf("TEST_FAILED\n");
+	return (1);
 }
 
 int					main_old(int argc, const char *argv[])
