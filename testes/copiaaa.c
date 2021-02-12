@@ -1,41 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/03 09:33:54 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/12 13:43:43 by gabriel          ###   ########.fr       */
+/*   Created: 2017/02/28 15:28:06 by jtoty             #+#    #+#             */
+/*   Updated: 2017/03/09 16:01:34 by jtoty            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include "../libft.h"
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
-
-int	main_old(void)
-{
-	char src[40];
-	char dest_one[12];
-	char dest_two[12];
-
-	memset(dest_one, '\0', sizeof(dest_one));
-	strcpy(src, "test string");
-	strncpy(dest_one, src, 9);
-	printf("Final copied string : %s\n", dest_one);
-	memset(dest_two, '\0', sizeof(dest_two));
-	strcpy(src, "test string");
-	ft_strlcpy(dest_two, src, 9);
-	printf("Final copied string : %s\n", dest_two);
-
-
-
-	return (0);
-}
-
+#include "../../../libft.h"
 
 
 void	ft_print_result(int n)

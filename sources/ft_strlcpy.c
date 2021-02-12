@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 09:32:13 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/04 12:53:46 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/12 13:50:06 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	char	atual;
 	int		zero;
 
+	if(size == 0)
+		return (ft_strlen(src));
 	zero = 0;
 	contador = 0;
 	atual = *((char *)src + contador);
