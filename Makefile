@@ -2,14 +2,14 @@
 
 CFLAG = -Wall -Wextra -Werror
 CC = gcc
+CAMINHO = sources/*.c
 
 $(NAME):
 	${CC} -c ${CFLAGS} libft.h sources/$(NAME)
 	ar -rc libft.a sources/$(NAME:.c=.o)
 all:
-	${CC} -c ${CFLAGS} libft.h sources/*.c
-	mv *.o sources/
-	ar -rc libft.a sources/*.o
+	${CC} -c ${CFLAGS} libft.h ${CAMINHO}
+	ar -rc libft.a *.o
 clean:
 	rm -f -- sources/*.o
 	rm -f -- libft.h.gch
@@ -21,8 +21,9 @@ re:
 	rm -f -- libft.h.gch
 	pwd
 	ls -l
-	${CC} -c ${CFLAGS} libft.h *.c
+	echo "CAMINHO = ${CAMINHO}"
+	${CC} -c ${CFLAGS} libft.h ${CAMINHO}
 	ar -rc libft.a *.o
 so:
-	$(CC) -fPIC $(CFLAGS) sources/*.c
-	gcc -shared -o libft.so sources/*.o
+	$(CC) -fPIC $(CFLAGS) *.c
+	gcc -shared -o libft.so *.o
