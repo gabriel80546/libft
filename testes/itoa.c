@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:19:22 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/11 12:38:52 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/12 12:05:55 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
+
 
 static void		ft_print_result(char *s)
 {
@@ -31,9 +33,10 @@ static void		ft_print_result(char *s)
 		write(1, s, len);
 		free(s);
 	}
+	write(1, "\n", 1);
 }
 
-int				main(void)
+int				main_one(void)
 {
 	char *i1 = ft_itoa(-623);
 	char *i2 = ft_itoa(156);
@@ -57,8 +60,60 @@ int				main(void)
 	printf("TEST_SUCCESS\n");
 	return (0);
 }
+int				main_two(void)
+{
+	int size;
+	char *i1;
 
-int				main_old(int argc, const char *argv[])
+	// i1 = ft_itoa(-5859);
+	i1 = ft_itoa(-3562);
+	size = 6;
+	if (size == 6) {
+		printf("TEST_SUCCESS\n");
+		return (1); }
+	printf("TEST_KO\n");
+	return (0);
+}
+
+int				main_three(void)
+{
+	int size;
+	char *i1;
+
+	i1 = ft_itoa(0);
+	size = 2;
+	if (size == 2) {
+		printf("TEST_SUCCESS\n");
+		return (1); }
+	printf("TEST_KO\n");
+	return (0);
+}
+
+int				main_four(void)
+{
+	// srand(clock());
+	srand(time(NULL));
+	int n;
+	char *d;
+
+	for (int i = 0; i < 100000; i++)
+	{
+		n = rand();
+		d = ft_itoa(n);
+		if (atoi(d) != n)
+		{
+			printf("TEST_FAILED\n");
+			return (1);
+		}
+		free(d);
+	}
+	printf("TEST_SUCCESS\n");
+	return (0);
+}
+
+
+
+int				main(int argc, const char *argv[])
 {
 	int		arg;
 

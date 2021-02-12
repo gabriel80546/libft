@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:16:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/12 10:32:47 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/12 10:59:04 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ static void			check_split(char *s, char c)
 {
 	char	**tabstr;
 
+	printf("tabstr = %p\n", tabstr);
+	printf("*tabstr = %p\n", *tabstr);
+	printf("*(tabstr + 1) = %p\n", *(tabstr + 1));
 	if (!(tabstr = ft_split(s, c)))
 		ft_print_result("NULL");
 	else
@@ -57,7 +60,11 @@ int					main(void)
 	char *s = "      split       this for   me  !       ";
 
 	char **result = ft_split(s, ' ');
-	printf("p = %p\n", result);
+
+	printf("result = %p\n", result);
+	printf("*result = %p\n", *result);
+	printf("*(result + 1) = %p\n", *(result + 1));
+	printf("result = %d;\t!result = %d\n", result, !result);
 	if (!result) {
 		printf("TEST_SUCCESS\n");
 		return (0); }
