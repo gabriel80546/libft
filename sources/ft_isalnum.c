@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 14:51:26 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/08 13:59:29 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/12 13:06:51 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int		ft_isalnum(int c)
 {
+	char teste;
+
 	if (((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z')))
 		return (1);
 	else if ((c >= '0') && (c <= '9'))
-		return (2);
+		return (1);
 	else
 		return (0);
 }

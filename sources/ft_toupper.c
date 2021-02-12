@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 15:23:59 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/09 11:52:02 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/12 13:29:52 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 
 int		ft_toupper(int c)
 {
-	if (c < -1)
-		return (256 + c);
-	else if ((c >= 'a') && (c <= 'z'))
+	if ((c >= 'a') && (c <= 'z'))
 		return (c - ('a' - 'A'));
 	else
 		return (c);

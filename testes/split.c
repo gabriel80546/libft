@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:16:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/12 10:59:04 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/12 13:13:04 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void			check_split(char *s, char c)
 		ft_print_tabstr(tabstr);
 }
 
-int					main(void)
+int					main_two(void)
 {
 	char *s = "      split       this for   me  !       ";
 
@@ -73,7 +73,7 @@ int					main(void)
 }
 
 
-int					main_old(int argc, const char *argv[])
+int					main(int argc, const char *argv[])
 {
 	int		arg;
 

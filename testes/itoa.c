@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:19:22 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/12 12:05:55 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/12 12:51:06 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void		ft_print_result(char *s)
 		write(1, s, len);
 		free(s);
 	}
-	write(1, "\n", 1);
+	// write(1, "\n", 1);
 }
 
 int				main_one(void)
@@ -140,5 +140,7 @@ int				main(int argc, const char *argv[])
 		ft_print_result(ft_itoa(-2147483647LL));
 	else if (arg == 10)
 		ft_print_result(ft_itoa(2147483647));
+	else if (arg == 11)
+		ft_print_result(ft_itoa(-2147483648LL));
 	return (0);
 }
