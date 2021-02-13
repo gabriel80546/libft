@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:30:05 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 09:32:16 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/13 09:37:24 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	ft_itoa_log(long n)
 	return (contador + 1);
 }
 
-static char	*ft_itoa_overfl()
+static char	*ft_itoa_overfl(void)
 {
 	char	*saida;
 
