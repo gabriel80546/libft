@@ -1,6 +1,7 @@
-caminho=/home/gabriel/Desktop/qd/projetos/libft/teste
+base=/home/gabriel/Desktop/qd/projetos/libft
+caminho=$base/teste
 rm -rf -- $caminho
-cp -r -v -n /home/gabriel/Desktop/qd/projetos/libft/libft/ $caminho
+cp -r -v -n $base/libft/ $caminho
 
 if [ "$1" = "1" ]
 then
