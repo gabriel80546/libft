@@ -14,3 +14,5 @@ echo "bose = \"$bose\""
 cat refazer.sh | sed "s/base=.*$/base=$bose/g" > oxi
 mv oxi refazer.sh
 chmod 775 refazer.sh
+cp -r -v -n unit_test_two/libft-unit-test unit_test_two/clone
+cp -r -v -n unit_test_three/libft-war-machine unit_test_three/clone
