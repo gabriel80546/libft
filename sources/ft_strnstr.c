@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:41:15 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/11 14:11:24 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/13 12:36:05 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,33 +35,4 @@ char	*ft_strnstr(const char *big, const char *l, size_t len)
 		i++;
 	}
 	return (NULL);
-}
-
-char	*ft_strnstr_old(const char *big, const char *l, size_t len)
-{
-	size_t	x;
-	size_t	y;
-
-	if (ft_strlen(l) == 0)
-		return (char *)big;
-	x = 0;
-	y = 0;
-	while (*(big + x) != '\0')
-	{
-		if (*(big + x + y) == *(l + y) && (*(l + y) != '\0') && y < len)
-			y++;
-		else if ((*(l + y) == '\0') && y != 0 && y < len)
-			break ;
-		else
-		{
-			y = 0;
-			x++;
-		}
-	}
-	if (*(((char *)big + x)) == '\0')
-		return ((void *)0);
-	else if (x > (len - ft_strlen(l)))
-		return ((void *)0);
-	else
-		return (((char *)big + x));
 }
