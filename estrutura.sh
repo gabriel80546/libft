@@ -13,4 +13,4 @@ echo "base = \"$base\""
 echo "bose = \"$bose\""
 cat refazer.sh | sed "s/base=.*$/base=$bose/g" > oxi
 mv oxi refazer.sh
-chmode 775 refazer.sh
+chmod 775 refazer.sh
