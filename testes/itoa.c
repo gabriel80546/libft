@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:19:22 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/12 12:51:06 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/13 09:35:46 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ int				main_two(void)
 	int size;
 	char *i1;
 
-	// i1 = ft_itoa(-5859);
-	i1 = ft_itoa(-3562);
+	i1 = ft_itoa(-5859);
 	size = 6;
 	if (size == 6) {
 		printf("TEST_SUCCESS\n");
@@ -91,7 +90,6 @@ int				main_three(void)
 
 int				main_four(void)
 {
-	// srand(clock());
 	srand(time(NULL));
 	int n;
 	char *d;
