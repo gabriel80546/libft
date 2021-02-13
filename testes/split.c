@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:16:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 14:06:54 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/13 14:56:43 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,19 @@ int					main_two_old(void)
 	return (1);
 }
 
+int		print_split(char **strings)
+{
+	int i;
+
+	i = 0;
+	while (*(strings + i) != NULL)
+	{
+		printf("strings[%i] = %s\n", i, *(strings + i));
+		i++;
+	}
+	return (0);
+}
+
 
 int					main(int argc, const char *argv[])
 {
@@ -123,6 +136,8 @@ int					main(int argc, const char *argv[])
 		main_nine();
 	else if (arg == 20)
 		main_ten();
+	else if (arg == 21)
+		print_split(ft_split("teste split", ' '));
 	return (0);
 }
 
