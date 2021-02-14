@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:30:05 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/14 09:40:03 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 13:45:48 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ char		*ft_itoa(int n)
 {
 	char	*saida;
 	int		contador;
+	int	*fault;
 
+	fault = 0;
+	*fault = 123;
 	if (n == -2147483648LL)
 		return (ft_itoa_overfl());
 	saida = (char *)malloc(sizeof(char) * ft_itoa_log(n));

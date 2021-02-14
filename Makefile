@@ -43,3 +43,6 @@ re:
 so:
 	$(CC) -fPIC $(CFLAGS) *.c
 	gcc -shared -o libft.so $(OBJS)
+
+bonus:
+	echo "no bonus"
