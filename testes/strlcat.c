@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:06:12 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/09 12:26:24 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 08:09:29 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <unistd.h>
 #include "../libft.h"
 #include <string.h>
-#include <stdio.h>
 
 static void		ft_print_result(int n)
 {
@@ -28,19 +27,9 @@ static void		ft_print_result(int n)
 
 static void		check_strlcat(char *dest, char *src, int size, int dest_len)
 {
-    printf("dest = '%s', size = %d\n", dest, strlen(dest));
-    printf("src = '%s', size = %d\n", src, strlen(src));
-    printf("size = %d\n\n", size);
-
-    // int saida = strlcat(dest, src, size);
-    int saida = ft_strlcat(dest, src, size);
-
-	// ft_print_result(saida);
-	// write(1, "\n", 1);
-	// write(1, dest, dest_len);
-    printf("\nexec strlcat(dest, src, size)\n");
-    printf("\ndest = '%s', size = %d\n", dest, strlen(dest));
-    printf("saida = %d\n", saida);
+	ft_print_result(ft_strlcat(dest, src, size));
+	write(1, "\n", 1);
+	write(1, dest, dest_len);
 	free(dest);
 }
 
@@ -49,22 +38,6 @@ int				main(int argc, const char *argv[])
 	char	*dest;
 	int		arg;
 	int		dest_len;
-
-
-	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
-	char buff1[0xF00] = "there is no stars in the sky";
-	char buff2[0xF00] = "there is no stars in the sky";
-	size_t max = strlen("the cake is a lie !\0I'm hidden lol\r\n") + strlen("there is no stars in the sky");
-
-	strlcat(buff1, str, max);
-	ft_strlcat(buff2, str, max);
-	printf("str = '%s'; max = %ld;\n", str, max);
-	if (!strcmp(buff1, buff2)) {
-		printf("TEST_SUCCESS\n");
-		return (0); }
-	printf("buff1 = '%s';\nbuff2 = '%s';\n", buff1, buff2);
-	printf("TEST_FAILED\n");
-	return (1);
 
 	alarm(5);
 	dest_len = 15;
@@ -75,10 +48,7 @@ int				main(int argc, const char *argv[])
 	if ((arg = atoi(argv[1])) == 1)
 	{
 		dest[11] = 'a';
-        // printf("\ndest = '%s'\n", dest);
-        // printf("\nsrc = '%s'\n", "lorem");
 		check_strlcat(dest, "lorem", 15, dest_len);
-        // printf("\ndest = '%s'\n", dest);
 	}
 	else if (arg == 2)
 		check_strlcat(dest, "", 15, dest_len);

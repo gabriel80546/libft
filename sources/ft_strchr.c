@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 13:52:41 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/05 14:44:03 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 08:26:38 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ char	*ft_strchr(const char *s, int c)
 	if (*(saida) == (char)c)
 		return (saida);
 	else
-		return (0);
+		return (NULL);
 }
