@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 15:09:21 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/13 21:12:10 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,15 @@ char	**ft_split(char const *s, char c)
 
 	size = ft_strlen(s);
 
-	saida = (char **)ft_calloc(sizeof(char *), size + 1);
+	saida = (char **)malloc(sizeof(char *) * (size + 1));
+	if(saida == NULL)
+		return (NULL);
 	i = 0;
 	while (i <= size)
 	{
-		*(saida + i) = (char *)ft_calloc(sizeof(char), size + 1);
+		*(saida + i) = (char *)malloc(sizeof(char) * (size + 1));
+		if(saida == NULL)
+			return (NULL);
 		i++;
 	}
 	i = 0;

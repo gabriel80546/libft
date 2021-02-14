@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:16:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 14:56:43 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/13 16:50:16 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
+#include <ctype.h>
 
 
 void	main_one(void);
@@ -28,6 +30,8 @@ void	main_seven(void);
 void	main_eight(void);
 void	main_nine(void);
 void	main_ten(void);
+
+int main_eleven(void);
 
 static void			ft_print_result(char const *s)
 {
@@ -138,6 +142,8 @@ int					main(int argc, const char *argv[])
 		main_ten();
 	else if (arg == 21)
 		print_split(ft_split("teste split", ' '));
+	else if (arg == 22)
+		main_eleven();
 	return (0);
 }
 
@@ -276,4 +282,56 @@ void	main_ten(void)
 	if (!expected)
 		sair("TEST_SUCCESS\n");
 	sair("TEST_FAILED\n");
+}
+
+
+int main_eleven(void)
+{
+
+	char **strings;
+
+	strings = ft_split("If money can't buy happyness", 'y');
+	while (*strings)
+		printf("%s\n", *strings++);
+	printf("----------\n");
+	strings = ft_split("If money can't buy happyness", 'e');
+	while (*strings)
+		printf("%s\n", *strings++);
+	printf("----------\n");
+
+	strings = ft_split("If money can't buy happyness", '3');
+	while (*strings)
+		printf("%s\n", *strings++);
+	printf("----------\n");
+
+	strings = ft_split("If money can't buy happyness", '\0');
+	while (*strings)
+		printf("%s\n", *strings++);
+	printf("----------\n");
+
+	strings = ft_split("          ", ' ');
+	while (*strings)
+		printf("%s\n", *strings++);
+	printf("----------\n");
+
+	strings = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
+	while (*strings)
+		printf("%s\n", *strings++);
+	printf("----------\n");
+
+	strings = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
+	while (*strings)
+		printf("%s\n", *strings++);
+	printf("----------\n");
+
+	strings = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i');
+	while (*strings)
+		printf("%s\n", *strings++);
+	printf("----------\n");
+
+	strings = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z');
+	while (*strings)
+		printf("%s\n", *strings++);
+	printf("----------\nFIM\n");
+	return (0);
 }
