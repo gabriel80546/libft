@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/14 09:40:49 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 10:08:37 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i <= size)
 	{
-		saida[i] = (char *)malloc(sizeof(char) * (size + 1));
+		*(saida + i) = (char *)malloc(sizeof(char) * (size + 1));
 		if (saida == NULL)
 			return (NULL);
 		j = 0;
 		while (j <= size)
 		{
-			saida[i][j] = 0;
+			*(*(saida + i) + j) = 0;
 			j++;
 		}
 		i++;
@@ -45,11 +45,11 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	k = 0;
 	estado = 0;
-	while (s[i] != '\0')
+	while (*(s + i) != '\0')
 	{
 		if (estado == 0)
 		{
-			if (s[i] != c)
+			if (*(s + i) != c)
 			{
 				i--;
 				estado = 1;
@@ -58,14 +58,14 @@ char	**ft_split(char const *s, char c)
 		}
 		else if (estado == 1)
 		{
-			if (s[i] != c)
+			if (*(s + i) != c)
 			{
-				saida[j][k] = s[i];
+				*(*(saida + j) + k) = *(s + i);
 				k++;
 			}
 			else
 			{
-				saida[j][k] = '\0';
+				*(*(saida + j) + k) = '\0';
 				estado = 0;
 				i--;
 				j++;
@@ -75,8 +75,8 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	if (estado == 1)
-		saida[j + 1] = NULL;
+		*(saida + j + 1) = NULL;
 	else
-		saida[j + 0] = NULL;
+		*(saida + j + 0) = NULL;
 	return (saida);
 }
