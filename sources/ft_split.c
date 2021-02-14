@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 22:13:04 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/13 22:15:55 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ char	**ft_split(char const *s, char c)
 	char	**saida;
 	int		estado;
 
-
 	size = ft_strlen(s);
-
 	saida = (char **)malloc(sizeof(char *) * (size + 1));
 	if(saida == NULL)
 		return (NULL);
