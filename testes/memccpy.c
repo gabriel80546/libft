@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 07:23:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/14 14:49:27 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 15:21:35 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,79 @@ int					main(int argc, const char *argv[])
 	{
 		printf("saida1 ft_memccpy = %p\n", ft_memccpy(dest, "coucou", 'c', 10));
 		printf("saida2 ft_memccpy = %p\n", (dest + 1));
+		printf("saida3 ft_memccpy = '%c'\n", dest[0]);
+		printf("saida4 ft_memccpy = '%c'\n", dest[1]);
 	}
 	else if (arg == 3)
 	{
 		printf("saida1 memccpy = %p\n", memccpy(dest, "coucou", 'c', 10));
 		printf("saida2 memccpy = %p\n", (dest + 1));
+		printf("saida3 memccpy = '%c'\n", dest[0]);
+		printf("saida4 memccpy = '%c'\n", dest[1]);
+	}
+	else if (arg == 4)
+	{
+		printf("saida1 ft_memccpy = %p\n", ft_memccpy(dest, "zyxwvutsrqponmlkjihgfedcba", 'x', 3));
+		printf("saida2 ft_memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 5)
+	{
+		printf("saida1 memccpy = %p\n", memccpy(dest, "zyxwvutsrqponmlkjihgfedcba", 'x', 3));
+		printf("saida2 memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 6)
+	{
+		printf("saida1 memccpy = %p\n", memccpy(dest, "zyxwvutsrqponmlkjihgfedcba", 'r', 20));
+		printf("saida2 memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 7)
+	{
+		printf("saida1 ft_memccpy = %p\n", ft_memccpy(dest, "zyxwvutsrqponmlkjihgfedcba", 'r', 20));
+		printf("saida2 ft_memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 8)
+	{
+		printf("saida1 memccpy = %p\n", memccpy(dest, "zyxwvutsrqponmlkjihgfedcba", 'r', 3));
+		printf("saida2 memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 9)
+	{
+		printf("saida1 ft_memccpy = %p\n", ft_memccpy(dest, "zyxwvutsrqponmlkjihgfedcba", 'r', 3));
+		printf("saida2 memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 10)
+	{
+		printf("saida1 memccpy = %p\n", memccpy(dest, "zyxwvutsrqponmlkjihgfedcba", 'a', 26));
+		printf("saida2 memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 11)
+	{
+		printf("saida1 ft_memccpy = %p\n", ft_memccpy(dest, "zyxwvutsrqponmlkjihgfedcba", 'a', 26));
+		printf("saida2 memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 12)
+	{
+		printf("saida1 memccpy = %p\n", memccpy(dest, "zyxwvuzyxwvu", 'x', 20));
+		printf("saida2 memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 13)
+	{
+		printf("saida1 ft_memccpy = %p\n", ft_memccpy(dest, "zyxwvuzyxwvu", 'x', 20));
+		printf("saida2 memccpy = %p\n", (dest + 1));
+	}
+	else if (arg == 14)
+	{
+		printf("saida1 ft_memccpy = %p\n", ft_memccpy(dest, "B", 0, 10));
+		printf("saida2 ft_memccpy = %p\n", (dest + 2));
+		printf("saida3 ft_memccpy = '%c'\n", dest[0]);
+		printf("saida4 ft_memccpy = %d\n", dest[1]);
+	}
+	else if (arg == 15)
+	{
+		printf("saida1 memccpy = %p\n", memccpy(dest, "B", 0, 10));
+		printf("saida2 memccpy = %p\n", (dest + 2));
+		printf("saida3 memccpy = '%c'\n", dest[0]);
+		printf("saida4 memccpy = %d\n", dest[1]);
 	}
 	return (0);
 }
