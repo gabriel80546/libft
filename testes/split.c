@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:16:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 16:50:16 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/13 21:45:56 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ void	main_eight(void);
 void	main_nine(void);
 void	main_ten(void);
 
-int main_eleven(void);
+int		main_eleven(void);
+
+int		main_doze(int arg);
 
 static void			ft_print_result(char const *s)
 {
@@ -144,6 +146,8 @@ int					main(int argc, const char *argv[])
 		print_split(ft_split("teste split", ' '));
 	else if (arg == 22)
 		main_eleven();
+	else if (arg >= 30 && arg <= 40)
+		main_doze(arg - 30);
 	return (0);
 }
 
@@ -334,4 +338,96 @@ int main_eleven(void)
 		printf("%s\n", *strings++);
 	printf("----------\nFIM\n");
 	return (0);
+}
+
+
+int             main_doze(int arg)
+{
+        char    **tabstr;
+        int             i;
+        // int             arg;
+
+        alarm(5);
+        // if (argc == 1)
+        //         return (0);
+        i = 0;
+        if (arg == 1)
+        {
+                if (!(tabstr = ft_split("          ", ' ')))
+                        ft_print_result("NULL");
+                else
+                {
+                        while (tabstr[i] != NULL)
+                        {
+                                ft_print_result(tabstr[i]);
+                                write(1, "\n", 1);
+                                i++;
+                        }
+                }
+        }
+        else if (arg == 2)
+        {
+                if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
+                        ft_print_result("NULL");
+                else
+                {
+                        while (tabstr[i] != NULL)
+                        {
+                                ft_print_result(tabstr[i]);
+                                write(1, "\n", 1);
+                                i++;
+                        }
+                }
+        }
+        else if (arg == 3)
+        {
+                if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
+                        ft_print_result("NULL");
+                else
+                {
+                        while (tabstr[i] != NULL)
+                        {
+                                ft_print_result(tabstr[i]);
+                                write(1, "\n", 1);
+                                i++;
+                        }
+                }
+        }
+        else if (arg == 4)
+        {
+                if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
+                        ft_print_result("NULL");
+                else
+                {
+                        while (tabstr[i] != NULL)
+                        {
+                                ft_print_result(tabstr[i]);
+                                write(1, "\n", 1);
+                                i++;
+                        }
+                }
+        }
+        else if (arg == 5)
+        {
+                if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
+                        ft_print_result("NULL");
+                else
+                {
+                        while (tabstr[i] != NULL)
+                        {
+                                ft_print_result(tabstr[i]);
+                                write(1, "\n", 1);
+                                i++;
+                        }
+                }
+        }
+        else if (arg == 6)
+        {
+                if (!(tabstr = ft_split("", 'z')))
+                        ft_print_result("NULL");
+                else
+                        if (!tabstr[0])
+                                ft_print_result("ok\n");
+        }
+        return (0);
 }
