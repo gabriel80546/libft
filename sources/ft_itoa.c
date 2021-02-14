@@ -6,13 +6,12 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:30:05 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 09:37:24 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 09:40:03 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static int	ft_itoa_log(long n)
 {

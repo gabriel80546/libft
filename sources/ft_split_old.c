@@ -6,13 +6,12 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 13:12:04 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 09:42:59 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 #include "../libft.h"
-#include <stdlib.h>
 char	**ft_split_old(char const *s, char c)
 {
 	int		contador;

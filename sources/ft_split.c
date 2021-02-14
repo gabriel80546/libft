@@ -6,13 +6,12 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/14 07:09:48 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 09:40:49 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 char	**ft_split(char const *s, char c)
 {

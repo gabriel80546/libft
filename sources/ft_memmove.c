@@ -6,14 +6,11 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:17:00 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 12:27:59 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 09:42:29 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

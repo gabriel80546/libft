@@ -6,12 +6,11 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:41:15 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 12:36:05 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 09:43:54 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *l, size_t len)
 {

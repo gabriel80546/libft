@@ -6,12 +6,11 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 07:35:02 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/11 13:43:18 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 09:39:48 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include <stdio.h>
 
 static int	ft_atoi_backend(int y, int sinal, char backend[40])
 {

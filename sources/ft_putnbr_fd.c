@@ -6,12 +6,11 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 09:42:41 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/11 12:24:30 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/14 09:40:35 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-#include <stdio.h>
 
 static void	ft_putnbr_fd_p(char numeros[40], int fd)
 {
