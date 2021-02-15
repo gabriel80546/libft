@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:06:12 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/15 13:08:59 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 13:29:23 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ static void		check_strlcat(char *dest, char *src, int size, int dest_len, char *
 
 	printf("---------------\n\n");
 
-	x = ft_strlcat(dest, src, size);
+	x = strlcat(dest, src, size);
 
 	printf("---------------\n\n");
 
@@ -200,6 +200,12 @@ int				main(int argc, const char *argv[])
 	{
 		memset(dest, 0, 30);
 		/* 15 */ check_strlcat(dest, "123", 3, dest_len, "12", 3);
+	}
+	else if (arg == 13)
+	{
+		memset(dest, 'r', 15);
+		// ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
+		/* 7 */ check_strlcat(dest, "lorem ipsum dolor sit amet", 5, dest_len, "12", 3);
 	}
 	return (0);
 }
