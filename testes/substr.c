@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:35:18 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/15 15:30:55 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 18:27:35 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int				main_two(void);
 static void		check_substr(char *str, int start, int len)
 {
 	char	*substr;
+
+	printf("str = '%s'(%ld)\n", str, strlen(str));
 
 	if (!(substr = ft_substr(str, start, len)))
 		printf("NULL");
@@ -59,6 +61,16 @@ int				main(int argc, const char *argv[])
 		// check_substr("tripouille", 0, 122);
 		check_substr("tripouille", 0, 42000);
 		// /* 2 */ mcheck(s, strlen("tripouille") + 1); free(s); showLeaks();
+	}
+	else if (arg == 7)
+	{
+		check_substr("tripouille", 100, 1);
+	}
+	else if (arg == 8)
+	{
+		check_substr("tripouille", 1, 1);
+		// /* 3 */ check(!strcmp(s, "r"));
+		// /* 4 */ mcheck(s, 2); free(s); showLeaks();
 	}
 	return (0);
 }
