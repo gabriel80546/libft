@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat_debug.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 09:47:40 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/15 13:14:21 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 13:40:38 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-// *dest = "lenzo";
-
-// printf("%d\n", ft_strlcat(dest, "manja de lcat", 4));
-// => 17
-// printf("%s\n", dest);
-// => "lenzo"
-
 
 size_t			ft_strlcat(char *dest, const char *src, size_t size)
 {
