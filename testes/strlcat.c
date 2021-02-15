@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:06:12 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/15 13:29:23 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 14:37:43 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ static void		check_strlcat(char *dest, char *src, int size, int dest_len, char *
 
 	printf("---------------\n\n");
 
-	x = strlcat(dest, src, size);
+	x = ft_strlcat(dest, src, size);
 
 	printf("---------------\n\n");
 
@@ -180,16 +180,13 @@ int				main(int argc, const char *argv[])
 	}
 	else if (arg == 9)
 	{
-		// "rrrrrrrrrrrrrr"
 		memset(destino, 'r', 4);
 		check_strlcat(destino, "loaa", 12, dest_len, "", 0);
 	}
 	else if (arg == 10)
 	{
-		// "rrrrrrrrrrrrrr"
 		memset(dest, 'C', 5);
 		/* 5 */ check_strlcat(dest, src, -1, dest_len, "CCCCCAAAAAAAAA", 14);
-		//  == 14 && !strcmp(dest, "CCCCCAAAAAAAAA")); showLeaks();
 	}
 	else if (arg == 11)
 	{
@@ -204,8 +201,23 @@ int				main(int argc, const char *argv[])
 	else if (arg == 13)
 	{
 		memset(dest, 'r', 15);
-		// ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
 		/* 7 */ check_strlcat(dest, "lorem ipsum dolor sit amet", 5, dest_len, "12", 3);
+	}
+	else if (arg == 14)
+	{
+		dest[11] = 'a';
+		check_strlcat(dest, "lorem", 15, dest_len, "12", 3);
+	}
+	else if (arg == 15)
+	{
+		char *str = "the cake is a lie !\0I'm hidden lol\r\n";
+        char buff1[0xF00] = "there is no stars in the sky";
+        char buff2[0xF00] = "there is no stars in the sky";
+        size_t max = 1000;
+
+        // strlcat(buff1, str, max);
+        // ft_strlcat(buff2, str, max);
+		check_strlcat(buff1, str, max, dest_len, "12", 3);
 	}
 	return (0);
 }

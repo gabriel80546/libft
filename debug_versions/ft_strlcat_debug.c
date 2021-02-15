@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 09:47:40 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/15 13:40:38 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 14:53:25 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,4 +151,72 @@ size_t			ft_strlcat_old(char *dest, const char *src, size_t size)
 	}
 	*(dest + i + dest_s) = '\0';
 	return (dest_s + src_s);
+}
+
+
+size_t		ft_strlcat_older(char *dest, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	dest_l;
+	size_t	src_l;
+
+	dest_l = ft_strlen(dest);
+	src_l = ft_strlen(src);
+	if (dest_l >= size)
+		return (src_l + size);
+	
+	i = (size <= dest_l + src_l) ? dest_l : 0;
+	if (size <= dest_l + src_l)
+	{
+		while ((int)i < ft_max(((int)size - 1), 0))
+		{
+			*((char *)dest + i) = *((char *)src + i - dest_l);
+			i++;
+		}
+		*((char *)dest + i) = '\0';
+	}
+	else
+	{
+		while (i < src_l)
+		{
+			*((char *)dest + i + dest_l) = *((char *)src + i);
+			i++;
+		}
+		*((char *)dest + i + dest_l) = '\0';
+	}
+	return (dest_l + src_l);
+}
+
+size_t		ft_strlcat_oldest(char *dest, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	dest_l;
+	size_t	src_l;
+
+	dest_l = ft_strlen(dest);
+	src_l = ft_strlen(src);
+	if (dest_l >= size)
+		return (src_l + size);
+	i = (size <= dest_l + src_l) ? dest_l : 0;
+	while (1)
+	{
+		if (size <= dest_l + src_l)
+		{
+			if(!((int)i < ft_max(((int)size - 1), 0)))
+				break ;
+			*((char *)dest + i) = *((char *)src + i - dest_l);
+		}
+		else
+		{
+			if(!(i < src_l))
+				break ;
+			*((char *)dest + i + dest_l) = *((char *)src + i - dest_l);
+		}
+		i++;
+	}
+	if (size <= dest_l + src_l)
+		*((char *)dest + i) = '\0';
+	else
+		*((char *)dest + i + dest_l) = '\0';
+	return (dest_l + src_l);
 }
