@@ -1,6 +1,6 @@
 # Define required macros here
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Werror -Wextra
 CC = clang
 CAMINHO = *.c
 NAME = libft.a
