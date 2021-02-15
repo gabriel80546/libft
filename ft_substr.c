@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 16:18:31 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/11 10:43:44 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 15:34:21 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*saida;
 	size_t	contador;
+	size_t	s_len;
 
-	saida = (char *)malloc(sizeof(char) * (len + 1));
+	s_len = ft_strlen(s);
+	saida = (char *)malloc(sizeof(char) * (s_len + 1));
 	if (saida == NULL)
 		return (NULL);
 	if (start > ft_strlen(s))
@@ -27,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (saida);
 	}
 	contador = start;
-	while (contador < (start + len))
+	while ((contador < (start + len)) && (contador < s_len))
 	{
 		*(saida + (contador - start)) = *((char *)s + contador);
 		contador++;

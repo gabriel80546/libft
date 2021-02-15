@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:35:18 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/11 10:34:42 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 15:30:55 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,18 @@
 #include <stdio.h>
 #include <string.h>
 
-static void		ft_print_result(char const *s)
-{
-	int		len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
+int				main_two(void);
 
 static void		check_substr(char *str, int start, int len)
 {
 	char	*substr;
 
 	if (!(substr = ft_substr(str, start, len)))
-		ft_print_result("NULL");
+		printf("NULL");
 	else
-		ft_print_result(substr);
+		printf("%s", substr);
 	if (str == substr)
-		ft_print_result("\nA new string was not returned");
+		printf("\nA new string was not returned");
 	else
 		free(substr);
 }
@@ -44,22 +36,6 @@ int				main(int argc, const char *argv[])
 {
 	char	string[] = "lorem ipsum dolor sit amet";
 	int		arg;
-
-
-	char *str = "01234";
-	size_t size = 10;
-	char *ret = ft_substr(str, 10, size);
-
-	if (!strncmp(ret, "", 1))
-	{
-		free(ret);
-		printf("TEST_SUCCESS\n");
-		return (1);
-	}
-	free(ret);
-	printf("TEST_FAILED\n");
-	return (0);
-
 
 	alarm(5);
 	if (argc == 1)
@@ -72,5 +48,35 @@ int				main(int argc, const char *argv[])
 		check_substr(string, 7, 0);
 	else if (arg == 4)
 		check_substr(string, 0, 0);
+	else if (arg == 5)
+		main_two();
+	else if (arg == 6)
+	{
+		// int iTest = 1;
+		// signal(SIGSEGV, sigsegv);
+		
+		// char * s = ft_substr("tripouille", 0, 42000);
+		// check_substr("tripouille", 0, 122);
+		check_substr("tripouille", 0, 42000);
+		// /* 2 */ mcheck(s, strlen("tripouille") + 1); free(s); showLeaks();
+	}
+	return (0);
+}
+
+
+int				main_two(void)
+{
+	char *str = "01234";
+	size_t size = 10;
+	char *ret = ft_substr(str, 10, size);
+
+	if (!strncmp(ret, "", 1))
+	{
+		free(ret);
+		printf("TEST_SUCCESS\n");
+		return (1);
+	}
+	free(ret);
+	printf("TEST_FAILED\n");
 	return (0);
 }
