@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/14 11:38:27 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 19:28:07 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,17 @@ char			**ft_split(char const *s, char c)
 			ft_split_ptwo(vars, s, c, saida);
 		vars[0] += 1;
 	}
-	if (vars[3] == 1)
-		*(saida + vars[1] + 1) = NULL;
-	else
-		*(saida + vars[1] + 0) = NULL;
+	vars[1] = ((vars[3] == 1) ? (vars[1] + 1) : (vars[1] + 0));
+	*(saida + vars[1]) = NULL;
+	vars[1] += 1;
+	while ((vars[1] + 1) < (int)ft_strlen(s))
+	{
+		free(*(saida + vars[1]));
+		vars[1] += 1;
+	}
+	// if (vars[3] == 1)
+	// 	*(saida + vars[1] + 1) = NULL;
+	// else
+	// 	*(saida + vars[1] + 0) = NULL;
 	return (saida);
 }

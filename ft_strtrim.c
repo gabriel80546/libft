@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 08:44:55 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/14 09:41:27 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 18:56:44 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		contador;
 	int		inicio;
-	char	*saida;
+	// char	*saida;
 
 	contador = 0;
 	while (*(s1 + contador) != '\0')
@@ -36,6 +36,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	if (contador <= inicio)
 		contador = (inicio + 1);
-	saida = ft_substr(s1, inicio, contador - inicio + 1);
-	return (saida);
+	// saida = ;
+	return (ft_substr(s1, inicio, contador - inicio + 1));
 }
