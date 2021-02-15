@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:06:12 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/15 11:54:16 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 11:58:03 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,8 +133,8 @@ static void		check_strlcat(char *dest, char *src, int size, int dest_len, char *
 	}
 	else
 	{
-		printf("entao posso concatenar tudo\n");
-		printf("que é '%s%s'(%ld)\n", dest, src, strlen(dest) + strlen(src));
+		printf("legal então eu posso concatenar tudo\n");
+		printf("resultando em '%s%s'(%ld)\n", dest, src, strlen(dest) + strlen(src));
 	}
 
 	printf("---------------\n");
