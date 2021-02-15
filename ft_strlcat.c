@@ -6,12 +6,14 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 09:47:40 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/15 10:38:16 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 13:14:21 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 // *dest = "lenzo";
 
@@ -26,45 +28,112 @@ size_t			ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	dest_l;
 	size_t	src_l;
-	size_t	loop;
-	size_t	saida;
+	int		j;
+	// size_t	loop;
+	// size_t	saida;
 
 
 	dest_l = ft_strlen(dest);
 	src_l = ft_strlen(src);
 
-	// printf("dest_l = %i\n", dest_l);
-	// printf("src_l = %i\n", src_l);
-	// printf("size = %i\n", size);
+	// int x;
+	// int at_most;
+	// char *join;
+	// char *jointwo;
+	// int i;
+	int temp;
 
-	// printf("\n\n\n\n");
 
-	// printf("dest = '%s', size = %ld\n", dest, strlen(dest));
-	// printf("src = '%s', size = %ld\n", src, strlen(src));
-	// printf("src + dest = %d\n", strlen(src) + strlen(dest));
-	// printf("src_l + size = %d\n", strlen(src) + size);
+	// join = (char *)malloc(sizeof(char) * (strlen(dest) + strlen(src)));
+	// jointwo = (char *)malloc(sizeof(char) * (strlen(dest) + strlen(src)));
+	// printf("dest = '%s'(%ld)\n", dest, strlen(dest));
+	// printf("src = '%s'(%ld)\n", src, strlen(src));
 	// printf("size = %d\n", size);
-	// printf("concat = %s%s\n", dest, src);
-	// printf("funfa? %s\n", (size <= (strlen(dest))) ? "nao" : "sim");
-	saida = ((size <= (ft_strlen(dest))) ? (ft_strlen(src) + size) : (ft_strlen(src) + ft_strlen(dest)));
-	// printf("saida? %d\n", (size <= (strlen(dest))) ? (strlen(src) + size) : (strlen(src) + strlen(dest)));
-	// printf("dest+src? %s\n", (size < (strlen(dest) + strlen(src))) ? "nao" : "sim");
-	// if(size < (strlen(dest) + strlen(src)))
-		// printf("sub? %s\n",   ((size < strlen(dest)) ? "sim" : "nao"));
-	// printf("dest_l? %d\n",   (size < (strlen(dest) + strlen(src))) ? ((size < strlen(dest)) ? (strlen(dest)) : ((size > strlen(dest)) ? (size - 1) : (strlen(dest)))) : (strlen(dest) + strlen(src)));
-	loop = ((size < (ft_strlen(dest) + ft_strlen(src))) ? ((size < ft_strlen(dest)) ? (ft_strlen(dest)) : ((size > ft_strlen(dest)) ? (size - 1) : (ft_strlen(dest)))) : (ft_strlen(dest) + ft_strlen(src)));
 
-	// printf("loop = %i\n", loop);
-	// printf("dest_l = %i\n", dest_l);
+	// printf("\n---------------\n");
 
-	i = dest_l;
-	while (i < (loop))
+	// printf("saida seria a concatenação de '%s'(%ld) e '%s'(%ld)\n", dest, strlen(dest), src, strlen(src));
+	// printf("que é '%s%s'(%ld)\n", dest, src, strlen(dest) + strlen(src));
+	// printf("mas size(%ld) é menor ou igual a concatenacao(%ld)? %s\n", size, strlen(dest) + strlen(src),  (size <= (strlen(dest) + strlen(src))) ? "sim" : "nao" );
+	if (size <= (strlen(dest) + strlen(src)))
 	{
-		*((char *)dest + i) = *((char *)src + i - dest_l);
-		i++;
+		// printf("merda :( entao não posso concatenar tudo\n");
+		// sprintf(join, "%s%s", dest, src);
+
+		temp = (size - 1);
+		temp = (temp < 0) ? 0 : temp;
+		// printf("mas o tamanho do (dest)(%ld) é maior que max((size - 1), 0)(%d)? %s\n", strlen(dest), temp, ((int)strlen(dest) > temp) ? "sim" : "nao");
+		if((int)strlen(dest) > (int)temp)
+		{
+			// printf("entao não posso usar um pouco do src\n");
+			// printf("vai ter que ser o mesmo que (dest) '%s'(%ld)\n", dest, strlen(dest));
+			// printf("saida tipo 3 entao retorna s+s => %ld\n", strlen(src) + size);
+			return (src_l + size);
+		}
+		else
+		{
+			// printf("entao posso usar um pouco do src totalizando max((size - 1), 0) => %d\n", temp);
+
+			// i = 0;
+			// while (i < temp)
+			// {
+			// 	*(jointwo + i) = *(join + i);
+			// 	i++;
+			// }
+			// *(jointwo + i) = '\0';
+			// jointwo = ft_substr(join, 0, (size - 1));
+
+
+
+			j = (size - 1);
+			// printf("j = %i\n", j);
+			j = ((j > 0) ? j : 0);
+			// printf("j = %i\n", j);
+
+			i = dest_l;
+
+			while ((int)i < j)
+			{
+				*((char *)dest + i) = *((char *)src + i - dest_l);
+				i++;
+
+			}
+
+	// printf("fui ate aqui\n");
+	// return (0);
+			*((char *)dest + i) = '\0';
+
+
+
+			// printf("que é '%s'%d\n", jointwo, strlen(jointwo));
+			// printf("saida tipo 2 entao retorna d+s => %ld\n", dest_l + src_l);
+			return (dest_l + src_l);
+		}
+		
 	}
-	*((char *)dest + i) = '\0';
-	return (saida);
+	else
+	{
+
+		// printf("legal (: então eu posso concatenar tudo\n");
+		// printf("resultando em '%s%s'(%ld)\n", dest, src, strlen(dest) + strlen(src));
+		// printf("saida tipo 1 entao retorna d+s => %ld\n", strlen(dest) + strlen(src));
+		i = 0;
+		while (i < src_l)
+		{
+			*((char *)dest + i + dest_l) = *((char *)src + i);
+			i++;
+		}
+		*((char *)dest + i + dest_l) = '\0';
+
+		return (dest_l + src_l);
+	}
+
+	// printf("---------------\n\n");
+
+
+	// x = strlcat(dest, src, size);
+	// printf("saida = %d\n", x);
+	// printf("dest = '%s'(%ld)\n", dest, strlen(dest));
 }
 
 size_t			ft_strlcat_old(char *dest, const char *src, size_t size)

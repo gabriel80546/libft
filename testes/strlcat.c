@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:06:12 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/15 12:23:14 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 13:08:59 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ static void		check_strlcat(char *dest, char *src, int size, int dest_len, char *
 		{
 			printf("entao não posso usar um pouco do src\n");
 			printf("vai ter que ser o mesmo que (dest) '%s'(%ld)\n", dest, strlen(dest));
-			printf("saida tipo 3 entao retorna => %d\n", strlen(src) + size);
+			printf("saida tipo 3 entao retorna s+s => %d\n", strlen(src) + size);
 		}
 		else
 		{
@@ -103,9 +103,8 @@ static void		check_strlcat(char *dest, char *src, int size, int dest_len, char *
 				i++;
 			}
 			*(jointwo + i) = '\0';
-			// jointwo = ft_substr(join, 0, (size - 1));
 			printf("que é '%s'%d\n", jointwo, strlen(jointwo));
-			printf("saida tipo 2 entao retorna => %d\n", strlen(dest) + strlen(src));
+			printf("saida tipo 2 entao retorna d+s => %d\n", strlen(dest) + strlen(src));
 		}
 		
 	}
@@ -113,21 +112,17 @@ static void		check_strlcat(char *dest, char *src, int size, int dest_len, char *
 	{
 		printf("legal (: então eu posso concatenar tudo\n");
 		printf("resultando em '%s%s'(%ld)\n", dest, src, strlen(dest) + strlen(src));
-		printf("saida tipo 1 entao retorna => %d\n", strlen(dest) + strlen(src));
+		printf("saida tipo 1 entao retorna d+s => %d\n", strlen(dest) + strlen(src));
 	}
 
-	printf("---------------\n");
+	printf("---------------\n\n");
 
+	x = ft_strlcat(dest, src, size);
 
-	x = strlcat(dest, src, size);
-	// printf("\n------\n\nsaida = %d\n", x);
-	// write(1, "\n", 1);
-	// write(1, dest, dest_len);
-	printf("\nsaida = %d\ndest = '%s'(%ld)\n", x, dest, strlen(dest));
-	// printf("dest = '%s', size = %ld <= esperado\n", c_esperado, strlen(c_esperado));
-	// printf("saida = %d <= esperado\n", s_esperado);
+	printf("---------------\n\n");
 
-	// free(dest);
+	printf("saida = %d\n", x);
+	printf("dest = '%s'(%ld)\n", dest, strlen(dest));
 }
 
 int				main(int argc, const char *argv[])
