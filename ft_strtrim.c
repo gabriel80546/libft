@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 08:44:55 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 15:30:44 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 18:10:49 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		inicio;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	i = 0;
 	while (*(s1 + i) != '\0')
 	{
