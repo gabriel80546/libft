@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 10:10:41 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 10:43:47 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,41 @@
 static int	ft_split_w(char const *s, char c)
 {
 	int i;
-	// int	w;
-	// int	last_w_size;
+	int	w;
+	int	last_w_size;
+	int	flags[5];
+	int mais_um;
 
 	i = 0;
-	// w = 0;
-	// last_w_size = 0;
-	while (*(s + i) != '\0')
+	w = 0;
+	last_w_size = 0;
+	mais_um = 0;
+	while (*(s + i) != '\0' || mais_um == 0)
 	{
+		if(*(s + i) == '\0')
+			mais_um = 1;
+		if(*(s + i) == c || mais_um == 1)
+		{
+			printf("mais um split em *(s + %d)\n", i);
+			flags[0] = (last_w_size > 0);
+			printf("mas o tamanho é maior que 0? %s\n", flags[0] ? "sim" : "nao");
+			
+			last_w_size = 0;
+			if(flags[0])
+			{
+				printf("entao adiciona mais uma palavra\n");
+				w++;
+			}
+			else
+				printf("entao pula esse split\n");
+		}
+		else
+			last_w_size++;
+		if (mais_um == 1)
+			break ;
 		i++;
 	}
-	// if (*(s + i - 1) == c)
-	// 	w--;
-	if (c == ' ')
-		return (i);
-	return (i);
+	return (w);
 }
 
 char		**ft_split(char const *s, char c)
@@ -43,8 +63,12 @@ char		**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	i = 0;
+	
+	printf("\n------------ ft_split_w(s, c) BEGIN\n");
 	words = ft_split_w(s, c);
-	printf("a string '%s' tem %d palavras", s, words);
+	printf("------------ ft_split_w(s, c) END\n\n");
+
+	printf("a string \"%s\" tem %d palavras\n\n", s, words);
 	return (NULL);
 }
 
@@ -105,7 +129,7 @@ static	void	ft_split_ptwo(int vars[4], char const *s, char c, char **saida)
 	}
 }
 
-char			**ft_split(char const *s, char c)
+char			**ft_split_old(char const *s, char c)
 {
 	char	**saida;
 	int		vars[4];

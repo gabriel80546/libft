@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:16:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 09:25:47 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 10:45:13 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,21 @@ static void			check_split(char *s, char c)
 {
 	char	**tabstr;
 
-	printf("tabstr = %p\n", tabstr);
-	if (!(tabstr = ft_split(s, c)))
+	printf("s = \"%s\"(%ld)\n", s, strlen(s));
+	printf("c = '%c'\n", c);
+
+	printf("\n------------ ft_split(s, c) BEGIN\n");
+
+	tabstr = ft_split(s, c);
+
+	printf("------------ ft_split(s, c) END\n\n");
+
+	// printf("tabstr = %p\n", tabstr);
+	if (!tabstr)
 		printf("NULL\n");
 	else
 		ft_print_tabstr(tabstr);
+
 }
 
 int					main_two_old(void)
@@ -145,7 +155,21 @@ int					main(int argc, const char *argv[])
 	else if (arg >= 30 && arg <= 40)
 		main_doze(arg - 30);
 	else if (arg == 50)
+		check_split("gabriel passos  duarte  gois", ' ');
+	else if (arg == 51)
+		check_split("gabriel passos", ' ');
+	else if (arg == 52)
 		check_split("gabriel passos ", ' ');
+	else if (arg == 53)
+		check_split("g ", ' ');
+	else if (arg == 54)
+		check_split(" ", ' ');
+	else if (arg == 55)
+		check_split("   ", ' ');
+	else if (arg == 56)
+		check_split("", ' ');
+	else if (arg == 57)
+		check_split("gabriel passos  duarte  gois", 'g');
 	return (0);
 }
 
