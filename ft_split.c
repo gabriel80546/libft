@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 14:41:06 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 14:48:08 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,11 @@ static void	ft_zero_four_a(int vars[4])
 	vars[3] = 0;
 }
 
-static void	ft_zero_four(int *a, int *b, int *c, int *d)
-{
-	*a = 0;
-	*b = 0;
-	*c = 0;
-	*d = 0;
-}
-
 static int	ft_split_wc(char const *s, char c)
 {
-	// int i;
-	// int	w;
-	// int	last_w_size;
-	// int mais_um;
 	int vars[4];
 
-	// ft_zero_four(&i, &w, &last_w_size, &mais_um);
 	ft_zero_four_a(vars);
-	// vars[0] = 0;
-	// vars[1] = 0;
-	// vars[2] = 0;
-	// vars[3] = 0;
 	while (*(s + vars[0]) != '\0' || vars[3] == 0)
 	{
 		if (*(s + vars[0]) == '\0')
@@ -66,37 +49,28 @@ static int	ft_split_wc(char const *s, char c)
 
 static int	ft_split_wa(char **saida, char const *s, char c)
 {
-	// int i;
-	// int	w;
-	// int	last_w_size;
-	// int mais_um;
-	int vars[4];
+	int v[4];
 
-	// ft_zero_four(&i, &w, &last_w_size, &mais_um);
-	ft_zero_four_a(vars);
-	// vars[0] = 0;
-	// vars[1] = 0;
-	// vars[2] = 0;
-	// vars[3] = 0;
-	while (*(s + vars[0]) != '\0' || vars[3] == 0)
+	ft_zero_four_a(v);
+	while (*(s + v[0]) != '\0' || v[3] == 0)
 	{
-		if (*(s + vars[0]) == '\0')
-			vars[3] = 1;
-		if (*(s + vars[0]) == c || vars[3] == 1)
+		if (*(s + v[0]) == '\0')
+			v[3] = 1;
+		if (*(s + v[0]) == c || v[3] == 1)
 		{
-			if (vars[2] > 0)
+			if (v[2] > 0)
 			{
-				*(saida + vars[1]) = (char *)malloc(sizeof(char) * (vars[2] + 1));
-				if (*(saida + vars[1]) == NULL)
+				*(saida + v[1]) = (char *)malloc(sizeof(char) * (v[2] + 1));
+				if (*(saida + v[1]) == NULL)
 					return (-1);
-				vars[1] += 1;
+				v[1] += 1;
 			}
-			vars[2] = 0;
+			v[2] = 0;
 		}
 		else
-			vars[2] += 1;
-		vars[0] += 1;
-		if (vars[3] == 1)
+			v[2] += 1;
+		v[0] += 1;
+		if (v[3] == 1)
 			break ;
 	}
 	return (0);
@@ -104,32 +78,29 @@ static int	ft_split_wa(char **saida, char const *s, char c)
 
 static void	ft_split_set(char **saida, char const *s, char c)
 {
-	int i;
-	int	w;
-	int	last_w_size;
-	int mais_um;
+	int vars[4];
 
-	ft_zero_four(&i, &w, &last_w_size, &mais_um);
-	while ((*(s + i) != '\0') || mais_um == 0)
+	ft_zero_four_a(vars);
+	while ((*(s + vars[0]) != '\0') || vars[3] == 0)
 	{
-		if (*(s + i) == '\0')
-			mais_um = 1;
-		if ((*(s + i) == c) || mais_um == 1)
+		if (*(s + vars[0]) == '\0')
+			vars[3] = 1;
+		if ((*(s + vars[0]) == c) || vars[3] == 1)
 		{
-			if (last_w_size > 0)
+			if (vars[2] > 0)
 			{
-				*(*(saida + w) + last_w_size) = (char)'\0';
-				w++;
+				*(*(saida + vars[1]) + vars[2]) = (char)'\0';
+				vars[1] += 1;
 			}
-			last_w_size = 0;
+			vars[2] = 0;
 		}
 		else
 		{
-			*(*(saida + w) + last_w_size) = (char)*(s + i);
-			last_w_size++;
+			*(*(saida + vars[1]) + vars[2]) = (char)*(s + vars[0]);
+			vars[2] += 1;
 		}
-		i++;
-		if (mais_um == 1)
+		vars[0] += 1;
+		if (vars[3] == 1)
 			break ;
 	}
 }
