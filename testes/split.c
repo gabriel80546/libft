@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:16:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 12:54:53 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 13:09:14 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void			ft_print_tabstr(char **tabstr)
 	while (tabstr[i] != NULL)
 	{
 		printf("tabstr[%i] = %p;\t'%s'(%ld)$\n", i, tabstr[i], tabstr[i], strlen(tabstr[i]));
-		// free(tabstr[i]);
+		free(tabstr[i]);
 		i++;
 	}
 	free(tabstr);
