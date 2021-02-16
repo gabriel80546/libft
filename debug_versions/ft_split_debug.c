@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_debug.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/15 19:28:07 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 11:24:16 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,44 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+static int	ft_split_wc(char const *s, char c)
+{
+	int i;
+	int	w;
+	int	last_w_size;
+	int	flags[5];
+	int mais_um;
+
+	i = 0;
+	w = 0;
+	last_w_size = 0;
+	mais_um = 0;
+	while ((*(s + i) != '\0' || mais_um == 0) && mais_um != 1)
+	{
+		if(*(s + i) == '\0')
+			mais_um = 1;
+		if(*(s + i) == c || mais_um == 1)
+		{
+			printf("mais um split em *(s + %d)\n", i);
+			flags[0] = (last_w_size > 0);
+			printf("mas o tamanho é maior que 0? %s\n", flags[0] ? "sim" : "nao");
+
+			if(flags[0])
+			{
+				printf("entao adiciona mais uma palavra\n");
+				w++;
+			}
+			else
+				printf("entao pula esse split\n");
+			last_w_size = 0;
+		}
+		else
+			last_w_size++;
+		i++;
+	}
+	return (w);
+}
 
 static int		ft_split_alloc(int size, char **saida)
 {
