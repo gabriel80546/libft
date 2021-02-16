@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:16:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/13 21:45:56 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 09:25:47 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ static void			ft_print_tabstr(char **tabstr)
 	i = 0;
 	while (tabstr[i] != NULL)
 	{
-		ft_print_result(tabstr[i]);
-		write(1, "\n", 1);
+		printf("%s\n", tabstr[i]);
 		free(tabstr[i]);
 		i++;
 	}
@@ -65,11 +64,8 @@ static void			check_split(char *s, char c)
 	char	**tabstr;
 
 	printf("tabstr = %p\n", tabstr);
-	printf("*(tabstr + 0) = %p\n", *(tabstr + 0));
-	printf("*(tabstr + 1) = %p\n", *(tabstr + 1));
-	printf("*(tabstr + 2) = %p\n", *(tabstr + 2));
 	if (!(tabstr = ft_split(s, c)))
-		ft_print_result("NULL");
+		printf("NULL\n");
 	else
 		ft_print_tabstr(tabstr);
 }
@@ -148,6 +144,8 @@ int					main(int argc, const char *argv[])
 		main_eleven();
 	else if (arg >= 30 && arg <= 40)
 		main_doze(arg - 30);
+	else if (arg == 50)
+		check_split("gabriel passos ", ' ');
 	return (0);
 }
 
@@ -343,91 +341,91 @@ int main_eleven(void)
 
 int             main_doze(int arg)
 {
-        char    **tabstr;
-        int             i;
-        // int             arg;
+	char	**tabstr;
+	int		i;
+	// int             arg;
 
-        alarm(5);
-        // if (argc == 1)
-        //         return (0);
-        i = 0;
-        if (arg == 1)
-        {
-                if (!(tabstr = ft_split("          ", ' ')))
-                        ft_print_result("NULL");
-                else
-                {
-                        while (tabstr[i] != NULL)
-                        {
-                                ft_print_result(tabstr[i]);
-                                write(1, "\n", 1);
-                                i++;
-                        }
-                }
-        }
-        else if (arg == 2)
-        {
-                if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
-                        ft_print_result("NULL");
-                else
-                {
-                        while (tabstr[i] != NULL)
-                        {
-                                ft_print_result(tabstr[i]);
-                                write(1, "\n", 1);
-                                i++;
-                        }
-                }
-        }
-        else if (arg == 3)
-        {
-                if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
-                        ft_print_result("NULL");
-                else
-                {
-                        while (tabstr[i] != NULL)
-                        {
-                                ft_print_result(tabstr[i]);
-                                write(1, "\n", 1);
-                                i++;
-                        }
-                }
-        }
-        else if (arg == 4)
-        {
-                if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
-                        ft_print_result("NULL");
-                else
-                {
-                        while (tabstr[i] != NULL)
-                        {
-                                ft_print_result(tabstr[i]);
-                                write(1, "\n", 1);
-                                i++;
-                        }
-                }
-        }
-        else if (arg == 5)
-        {
-                if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
-                        ft_print_result("NULL");
-                else
-                {
-                        while (tabstr[i] != NULL)
-                        {
-                                ft_print_result(tabstr[i]);
-                                write(1, "\n", 1);
-                                i++;
-                        }
-                }
-        }
-        else if (arg == 6)
-        {
-                if (!(tabstr = ft_split("", 'z')))
-                        ft_print_result("NULL");
-                else
-                        if (!tabstr[0])
-                                ft_print_result("ok\n");
-        }
-        return (0);
+	alarm(5);
+	// if (argc == 1)
+	//         return (0);
+	i = 0;
+	if (arg == 1)
+	{
+		if (!(tabstr = ft_split("          ", ' ')))
+			ft_print_result("NULL");
+		else
+		{
+			while (tabstr[i] != NULL)
+			{
+				ft_print_result(tabstr[i]);
+				write(1, "\n", 1);
+				i++;
+			}
+		}
+	}
+	else if (arg == 2)
+	{
+		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
+			ft_print_result("NULL");
+		else
+		{
+			while (tabstr[i] != NULL)
+			{
+				ft_print_result(tabstr[i]);
+				write(1, "\n", 1);
+				i++;
+			}
+		}
+	}
+	else if (arg == 3)
+	{
+		if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
+			ft_print_result("NULL");
+		else
+		{
+			while (tabstr[i] != NULL)
+			{
+				ft_print_result(tabstr[i]);
+				write(1, "\n", 1);
+				i++;
+			}
+		}
+	}
+	else if (arg == 4)
+	{
+		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
+			ft_print_result("NULL");
+		else
+		{
+			while (tabstr[i] != NULL)
+			{
+				ft_print_result(tabstr[i]);
+				write(1, "\n", 1);
+				i++;
+			}
+		}
+	}
+	else if (arg == 5)
+	{
+		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
+			ft_print_result("NULL");
+		else
+		{
+			while (tabstr[i] != NULL)
+			{
+				ft_print_result(tabstr[i]);
+				write(1, "\n", 1);
+				i++;
+			}
+		}
+	}
+	else if (arg == 6)
+	{
+		if (!(tabstr = ft_split("", 'z')))
+			ft_print_result("NULL");
+		else
+			if (!tabstr[0])
+				ft_print_result("ok\n");
+	}
+	return (0);
 }

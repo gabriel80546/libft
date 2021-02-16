@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 09:36:06 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/15 19:28:07 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-
-/* 
-static int	ft_split_w(char const *s, char c)
-{
-	int i;
-	// int	w;
-	// int	last_w_size;
-
-	i = 0;
-	// w = 0;
-	// last_w_size = 0;
-	while (*(s + i) != '\0')
-	{
-		i++;
-	}
-	// if (*(s + i - 1) == c)
-	// 	w--;
-	if (c == ' ')
-		return (i);
-	return (i);
-}
- */
-char		**ft_split_old(char const *s/* , char c */)
-{
-	// int	i;
-	// int	words;
-
-	if (s == NULL)
-		return (NULL);
-	// i = 0;
-	// words = ft_split_w(s, c);
-	// printf("a string '%s' tem %d palavras", s, words);
-	return (NULL);
-}
 
 static int		ft_split_alloc(int size, char **saida)
 {
@@ -111,8 +77,6 @@ char			**ft_split(char const *s, char c)
 	char	**saida;
 	int		vars[4];
 
-	if(s == NULL)
-		return (NULL);
 	saida = (char **)malloc(sizeof(char *) * ((ft_strlen(s)) + 1));
 	if (saida == NULL)
 		return (NULL);
