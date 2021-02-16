@@ -3,7 +3,7 @@ funcao="strtrim"
 
 if [ $(whoami) = "gabriel" ]
 then
-    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c ../sources/ft_strchr.c ../sources/ft_strlen.c ../sources/ft_substr.c -o main
+    clang -Wextra -Wall -Werror -g3 -fsanitize=address $funcao.c ../libft.h ../ft_$funcao.c ../ft_strchr.c ../ft_strlen.c ../ft_substr.c
 else
-    gcc $funcao.c ../libft.h ../sources/ft_$funcao.c ../sources/ft_strchr.c ../sources/ft_strlen.c ../sources/ft_substr.c
+    clang -Wextra -Wall -Werror -g3 -fsanitize=address $funcao.c ../libft.h ../ft_$funcao.c ../ft_strchr.c ../ft_strlen.c ../ft_substr.c
 fi

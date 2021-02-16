@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:35:29 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/07 08:49:18 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 15:14:37 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,14 @@ int				main(int argc, const char *argv[])
 	{
 		char s1[] = "          ";
 		check_strtrim(s1, set);
+	}
+	else if (arg == 6)
+	{
+		char s1[] = "   xxx   xxx";
+		check_strtrim(s1, " x");
+		// s = ft_strtrim("   xxx   xxx", " x");
+		// /* 7 */ check(!strcmp(s, ""));
+		// /* 8 */ mcheck(s, 1); free(s); showLeaks();
 	}
 	return (0);
 }

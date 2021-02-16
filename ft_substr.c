@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 16:18:31 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/15 18:53:53 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 15:26:58 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	int		alocar;
 
 	s_len = ft_strlen(s);
-	alocar = ((start > s_len) ? 1 : ft_min(s_len + 1, len + 1));
+	alocar = ((start >= s_len) ? 1 : ft_min(s_len + 1, len + 1));
 	saida = (char *)malloc(sizeof(char) * alocar);
 	if (saida == NULL)
 		return (NULL);
