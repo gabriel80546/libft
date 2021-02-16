@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 14:48:08 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 14:50:30 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string.h>
 #include <stdio.h>
 
-static void	ft_zero_four_a(int vars[4])
+static void	ft_zero_four(int vars[4])
 {
 	vars[0] = 0;
 	vars[1] = 0;
@@ -27,7 +27,7 @@ static int	ft_split_wc(char const *s, char c)
 {
 	int vars[4];
 
-	ft_zero_four_a(vars);
+	ft_zero_four(vars);
 	while (*(s + vars[0]) != '\0' || vars[3] == 0)
 	{
 		if (*(s + vars[0]) == '\0')
@@ -51,7 +51,7 @@ static int	ft_split_wa(char **saida, char const *s, char c)
 {
 	int v[4];
 
-	ft_zero_four_a(v);
+	ft_zero_four(v);
 	while (*(s + v[0]) != '\0' || v[3] == 0)
 	{
 		if (*(s + v[0]) == '\0')
@@ -80,7 +80,7 @@ static void	ft_split_set(char **saida, char const *s, char c)
 {
 	int vars[4];
 
-	ft_zero_four_a(vars);
+	ft_zero_four(vars);
 	while ((*(s + vars[0]) != '\0') || vars[3] == 0)
 	{
 		if (*(s + vars[0]) == '\0')
