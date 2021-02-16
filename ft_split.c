@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 14:02:26 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 14:14:28 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static int	ft_split_wc(char const *s, char c)
 	int i;
 	int	w;
 	int	last_w_size;
-	int	flags[5];
 	int mais_um;
 
 	i = 0;
@@ -42,16 +41,11 @@ static int	ft_split_wc(char const *s, char c)
 		if(*(s + i) == c || mais_um == 1)
 		{
 			// printf("mais um split em *(s + %d)\n", i);
-			flags[0] = (last_w_size > 0);
-			// printf("mas o tamanho é maior que 0? %s\n", flags[0] ? "sim" : "nao");
-
-			if(flags[0])
+			if(last_w_size > 0)
 			{
 				// printf("entao adiciona mais uma palavra\n");
 				w++;
 			}
-			else
-				// printf("entao pula esse split\n");
 			last_w_size = 0;
 		}
 		else
@@ -122,7 +116,6 @@ static void	ft_split_set(char **saida, char const *s, char c)
 			if (last_w_size > 0)
 			{
 				// printf("last_w_size = %i\n", last_w_size);
-				// printf("\n");
 				*(*(saida + w) + last_w_size) = (char)'\0';
 				w++;
 			}
@@ -138,8 +131,6 @@ static void	ft_split_set(char **saida, char const *s, char c)
 		if (mais_um == 1)
 			break ;
 	}
-	// printf("w = %i\n", w);
-	// *(saida + w + 1) = NULL;
 }
 
 char		**ft_split(char const *s, char c)

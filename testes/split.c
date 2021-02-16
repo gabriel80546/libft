@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 13:16:42 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 13:57:57 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 14:08:50 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,8 @@ int					main(int argc, const char *argv[])
 		test_three(arg - 60);
 	else if (arg == 71)
 		check_split("                  olol", ' ');
+	else if (arg == 72)
+		check_split("split  ||this|for|me|||||!|", '|');
 	return (0);
 }
 
