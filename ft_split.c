@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 09:36:06 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 10:10:41 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <string.h>
 #include <stdio.h>
 
-/* 
 static int	ft_split_w(char const *s, char c)
 {
 	int i;
@@ -35,17 +34,17 @@ static int	ft_split_w(char const *s, char c)
 		return (i);
 	return (i);
 }
- */
-char		**ft_split_old(char const *s/* , char c */)
+
+char		**ft_split(char const *s, char c)
 {
-	// int	i;
-	// int	words;
+	int	i;
+	int	words;
 
 	if (s == NULL)
 		return (NULL);
-	// i = 0;
-	// words = ft_split_w(s, c);
-	// printf("a string '%s' tem %d palavras", s, words);
+	i = 0;
+	words = ft_split_w(s, c);
+	printf("a string '%s' tem %d palavras", s, words);
 	return (NULL);
 }
 

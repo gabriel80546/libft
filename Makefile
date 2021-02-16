@@ -1,8 +1,6 @@
-# Define required macros here
 
 CFLAGS = -Wall -Wextra -Werror
 CC = clang
-CAMINHO = *.c
 NAME = libft.a
 
 SOURCES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
@@ -37,4 +35,4 @@ so:
 	gcc -shared -o libft.so $(OBJS)
 
 bonus:
-	echo "no bonus"
+	printf ""
