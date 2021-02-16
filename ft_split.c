@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 13:05:35 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/16 14:02:26 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,37 @@ static int	ft_split_wc(char const *s, char c)
 	int i;
 	int	w;
 	int	last_w_size;
+	int	flags[5];
 	int mais_um;
 
-	// ft_zero_four(&i, &w, &last_w_size, &mais_um);
 	i = 0;
 	w = 0;
 	last_w_size = 0;
 	mais_um = 0;
-	while ((*(s + i) != '\0' || mais_um == 0) && mais_um != 1)
+	while (*(s + i) != '\0' || mais_um == 0)
 	{
-		if (*(s + i) == '\0')
+		if(*(s + i) == '\0')
 			mais_um = 1;
-		if (*(s + i) == c || mais_um == 1)
+		if(*(s + i) == c || mais_um == 1)
 		{
-			if (last_w_size > 0)
+			// printf("mais um split em *(s + %d)\n", i);
+			flags[0] = (last_w_size > 0);
+			// printf("mas o tamanho é maior que 0? %s\n", flags[0] ? "sim" : "nao");
+
+			if(flags[0])
+			{
+				// printf("entao adiciona mais uma palavra\n");
 				w++;
+			}
+			else
+				// printf("entao pula esse split\n");
 			last_w_size = 0;
 		}
 		else
 			last_w_size++;
 		i++;
+		if (mais_um == 1)
+			break ;
 	}
 	return (w);
 }
@@ -64,7 +75,7 @@ static int	ft_split_wa(char **saida, char const *s, char c)
 	w = 0;
 	last_w_size = 0;
 	mais_um = 0;
-	while ((*(s + i) != '\0' || mais_um == 0) && mais_um != 1)
+	while (*(s + i) != '\0' || mais_um == 0)
 	{
 		if (*(s + i) == '\0')
 			mais_um = 1;
@@ -83,6 +94,8 @@ static int	ft_split_wa(char **saida, char const *s, char c)
 		else
 			last_w_size++;
 		i++;
+		if (mais_um == 1)
+			break ;
 	}
 	return (0);
 }
@@ -92,14 +105,18 @@ static void	ft_split_set(char **saida, char const *s, char c)
 	int i;
 	int	w;
 	int	last_w_size;
+	int mais_um;
 
 	i = 0;
 	w = 0;
 	last_w_size = 0;
-	while (*(s + i) != '\0')
+	mais_um = 0;
+	while ((*(s + i) != '\0') || mais_um == 0)
 	{
+		if (*(s + i) == '\0')
+			mais_um = 1;
 		// printf("*(s + %i) = '%c'\n", i, *(s + i));
-		if(*(s + i) == c)
+		if ((*(s + i) == c) || mais_um == 1)
 		{
 			// printf("\nmais um split em *(s + %d)\n", i);
 			if (last_w_size > 0)
@@ -118,6 +135,8 @@ static void	ft_split_set(char **saida, char const *s, char c)
 			last_w_size++;
 		}
 		i++;
+		if (mais_um == 1)
+			break ;
 	}
 	// printf("w = %i\n", w);
 	// *(saida + w + 1) = NULL;
@@ -139,7 +158,7 @@ char		**ft_split(char const *s, char c)
 	saida = (char **)malloc(sizeof(char *) * (words + 1));
 	if (saida == NULL)
 		return (NULL);
-	*(saida + words + 0) = NULL;
+	*(saida + words) = NULL;
 	// printf("------------ ft_split_wa(saida, s, c) BEGIN\n");
 	if (ft_split_wa(saida, s, c) == -1)
 		return (NULL);
