@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpassos- <gpassos-@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: gpassos- <gpassos-@student.42sp.org.br>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 10:17:28 by gpassos-          #+#    #+#             */
 /*   Updated: 2021/02/17 10:17:29 by gpassos-         ###   ########.fr       */

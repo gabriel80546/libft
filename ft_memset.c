@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpassos- <gpassos-@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: gpassos- <gpassos-@student.42sp.org.br>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 10:16:46 by gpassos-          #+#    #+#             */
 /*   Updated: 2021/02/17 10:16:48 by gpassos-         ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpassos- <gpassos-@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: gpassos- <gpassos-@student.42sp.org.br>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 10:15:41 by gpassos-          #+#    #+#             */
 /*   Updated: 2021/02/17 10:15:48 by gpassos-         ###   ########.fr       */

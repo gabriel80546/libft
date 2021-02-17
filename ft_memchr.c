@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpassos- <gpassos-@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: gpassos- <gpassos-@student.42sp.org.br>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 10:16:00 by gpassos-          #+#    #+#             */
 /*   Updated: 2021/02/17 10:16:19 by gpassos-         ###   ########.fr       */
