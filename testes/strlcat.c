@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:06:12 by jtoty             #+#    #+#             */
-/*   Updated: 2021/02/15 14:37:43 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/17 20:49:18 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ static void		check_strlcat(char *dest, char *src, int size, int dest_len, char *
 	printf("saida = %d\n", x);
 	printf("dest = '%s'(%ld)\n", dest, strlen(dest));
 }
+
 
 int				main(int argc, const char *argv[])
 {
