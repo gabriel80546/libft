@@ -6,14 +6,12 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 09:46:43 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/16 14:19:01 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/18 08:33:07 by gpassos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
 // static void	ft_zero_four(int *a, int *b, int *c, int *d)
 // {

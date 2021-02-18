@@ -6,13 +6,11 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 09:47:40 by gabriel           #+#    #+#             */
-/*   Updated: 2021/02/15 14:53:25 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/18 08:32:50 by gpassos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 
 size_t			ft_strlcat(char *dest, const char *src, size_t size)
