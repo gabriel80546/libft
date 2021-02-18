@@ -6,12 +6,11 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 10:59:01 by gpassos-          #+#    #+#             */
-/*   Updated: 2021/02/18 07:56:43 by gabriel          ###   ########.fr       */
+/*   Updated: 2021/02/18 07:58:18 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	ft_strlcpy_p(char *dest, const char *src, size_t size)
 {

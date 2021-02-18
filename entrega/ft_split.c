@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpassos- <gpassos-@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 10:58:36 by gpassos-          #+#    #+#             */
-/*   Updated: 2021/02/17 10:58:37 by gpassos-         ###   ########.fr       */
+/*   Updated: 2021/02/18 07:59:40 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 
 static void	ft_zero_four(int vars[4])
 {
